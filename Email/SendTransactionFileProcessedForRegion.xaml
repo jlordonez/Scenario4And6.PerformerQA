@@ -1,0 +1,309 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SendTransactionFileProcessedForRegion" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="NotificationsDt" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="RegionsDt" Type="InArgument(sd:DataTable)" />
+  </x:Members>
+  <this:SendTransactionFileProcessedForRegion.NotificationsDt>
+    <InArgument x:TypeArguments="sd:DataTable" />
+  </this:SendTransactionFileProcessedForRegion.NotificationsDt>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1068,3274</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SendTransactionFileProcessedForRegion_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="30">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="66">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SendTransactionFileProcessedForRegion" sap:VirtualizedContainerService.HintSize="722,3209" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="Index" />
+      <Variable x:TypeArguments="x:String" Name="FinalReportRegionsFolder" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="680,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Start Send Transaction File Processed For Region&quot;]" />
+    <Assign DisplayName="Assign - FinalReportRegionsFolder" sap:VirtualizedContainerService.HintSize="680,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[FinalReportRegionsFolder]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_Config("FinalReportRegionsFolder").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[Index]" DataTable="[RegionsDt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="680,2755" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Region" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="646,2640" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Send Email with Transaction file processed successful" sap:VirtualizedContainerService.HintSize="604,1142" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Boolean" Name="FileExistsSuccessful" />
+                <Variable x:TypeArguments="x:String" Name="ResultFileRegion" />
+                <Variable x:TypeArguments="x:String" Name="ToAddress" />
+                <Variable x:TypeArguments="s:String[]" Name="Attachments" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:FileExistsX DisplayName="File Successful exists for each reagion" Exists="[FileExistsSuccessful]" sap:VirtualizedContainerService.HintSize="562,132" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[FinalReportRegionsFolder +&quot;\&quot; + Region.Item(&quot;SalesDistrict&quot;).ToString + &quot;\Results_&quot; + Now.ToString(&quot;yyyy-MM-dd&quot;) + &quot;.xlsx&quot;]" />
+              <If Condition="[FileExistsSuccessful]" DisplayName="Validate if File Successful Exist on folder" sap:VirtualizedContainerService.HintSize="562,878" sap2010:WorkflowViewState.IdRef="If_2">
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="526,691" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Assign - ResultsFile" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[ResultFileRegion]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[FinalReportRegionsFolder +"\" + Region.Item("SalesDistrict").ToString + "\Results_" + Now.ToString("yyyy-MM-dd") + ".xlsx"]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="Assign AddresTo" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[ToAddress]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[Region.Item("EmailToBeSend").ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <If Condition="[Attachments Is Nothing]" DisplayName="If Attachments is empty" sap:VirtualizedContainerService.HintSize="484,247" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If.Then>
+                        <Assign DisplayName="Assign - Attachments" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="s:String[]">[Attachments]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="s:String[]">[{ResultFileRegion}]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendNotificationResults workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Email\SendNotificationResults.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="s:String[]" x:Key="BodyValues">
+                          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{in_Config(&quot;logF_BusinessProcessName&quot;).ToString}" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="s:String[]" x:Key="SubjectValues" />
+                        <InArgument x:TypeArguments="x:String" x:Key="NotificationID">
+                          <Literal x:TypeArguments="x:String">Successfull</Literal>
+                        </InArgument>
+                        <InArgument x:TypeArguments="s:String[]" x:Key="Attachments">
+                          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="Attachments" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="ToAddress">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ToAddress" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="sd:DataTable" x:Key="NotificationsDt">
+                          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="NotificationsDt" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                        </InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+            <Sequence DisplayName="Send Email with Transaction file processed Failed" sap:VirtualizedContainerService.HintSize="604,1366" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Boolean" Name="FileExistsFailed" />
+                <Variable x:TypeArguments="x:String" Name="ToAddress" />
+                <Variable x:TypeArguments="s:String[]" Name="Attachments" />
+                <Variable x:TypeArguments="x:String" Name="ResultFileRegion" />
+                <Variable x:TypeArguments="x:String" Name="strBodyFile" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:FileExistsX DisplayName="File Failed exists for each reagion" Exists="[FileExistsFailed]" sap:VirtualizedContainerService.HintSize="562,132" sap2010:WorkflowViewState.IdRef="FileExistsX_3" Path="[FinalReportRegionsFolder +&quot;\&quot; + Region.Item(&quot;SalesDistrict&quot;).ToString + &quot;\FResults_&quot; + Now.ToString(&quot;yyyy-MM-dd&quot;) + &quot;.xlsx&quot;]" />
+              <If Condition="[FileExistsFailed]" DisplayName="Validate if File Failed Exist on folder" sap:VirtualizedContainerService.HintSize="562,1102" sap2010:WorkflowViewState.IdRef="If_5">
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="526,915" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Assign - ResultsFile" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[ResultFileRegion]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[FinalReportRegionsFolder +"\" + Region.Item("SalesDistrict").ToString + "\FResults_" + Now.ToString("yyyy-MM-dd") + ".xlsx"]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="Assign AddresTo" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[ToAddress]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[Region.Item("EmailToBeSend").ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Description:&#xA;1. Extract Data Table from File Failed&#xA;2. Merge DataTable&#xA;3. Create HTML Body (Table with transaction failed)" DisplayName="Invoke Misc_ExcelToHtml workflow" sap:VirtualizedContainerService.HintSize="484,184" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Misc\Misc_ExcelToHtml.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_strBodyFile">[strBodyFile]</OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_strWorkbookPath">[ResultFileRegion]</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InvokeWorkflowFile>
+                    <If Condition="[Attachments Is Nothing]" DisplayName="If Attachments is empty" sap:VirtualizedContainerService.HintSize="484,247" sap2010:WorkflowViewState.IdRef="If_4">
+                      <If.Then>
+                        <Assign DisplayName="Assign - Attachments" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="s:String[]">[Attachments]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="s:String[]">[{ResultFileRegion}]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendNotificationResults workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Email\SendNotificationResults.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="s:String[]" x:Key="BodyValues">
+                          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{strBodyFile}" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="s:String[]" x:Key="SubjectValues" />
+                        <InArgument x:TypeArguments="x:String" x:Key="NotificationID">
+                          <Literal x:TypeArguments="x:String">BussinessException</Literal>
+                        </InArgument>
+                        <InArgument x:TypeArguments="s:String[]" x:Key="Attachments">
+                          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="Attachments" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="ToAddress">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ToAddress" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="sd:DataTable" x:Key="NotificationsDt">
+                          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="NotificationsDt" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                        </InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="680,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;End Send Transaction File Processed For Region&quot;]" />
+  </Sequence>
+</Activity>

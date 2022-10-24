@@ -1,0 +1,121 @@
+{
+  "name": "Scenario4And6.Performer",
+  "description": "Description:\n1. Open SAP\n2. Navigate to TCODE\n3.Open Sales Order\n4. Select All J0\n5. Switch on ActionToTake:\n    a. Check Item Availability:\n    b. Rejection\n6. Navigate to Home\n7. Close SAP",
+  "main": "Main.xaml",
+  "dependencies": {
+    "Microsoft.Activities": "[1.0.1]",
+    "UiPath.Excel.Activities": "[2.12.3]",
+    "UiPath.Mail.Activities": "[1.15.2]",
+    "UiPath.MicrosoftOffice365.Activities": "[1.14.1]",
+    "UiPath.System.Activities": "[22.4.1]",
+    "UiPath.Testing.Activities": "[22.4.2]",
+    "UiPath.UIAutomation.Activities": "[22.4.4]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "22.4.1.0",
+  "projectVersion": "3.5.1",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": true
+  },
+  "arguments": {
+    "input": [
+      {
+        "name": "in_OrchestratorQueueName",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": false,
+        "hasDefault": false
+      },
+      {
+        "name": "in_OrchestratorQueueFolder",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": false,
+        "hasDefault": false
+      },
+      {
+        "name": "io_dtResult",
+        "type": "System.Data.DataTable, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": false,
+        "hasDefault": false
+      }
+    ],
+    "output": [
+      {
+        "name": "out_RowResult",
+        "type": "System.Object[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      },
+      {
+        "name": "io_dtResult",
+        "type": "System.Data.DataTable, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      }
+    ]
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "0cc95b84-b421-4b8c-a287-477fdb72d363",
+      "input": [
+        {
+          "name": "in_OrchestratorQueueName",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": false
+        },
+        {
+          "name": "in_OrchestratorQueueFolder",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": false
+        },
+        {
+          "name": "io_dtResult",
+          "type": "System.Data.DataTable, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": false
+        }
+      ],
+      "output": [
+        {
+          "name": "out_RowResult",
+          "type": "System.Object[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        {
+          "name": "io_dtResult",
+          "type": "System.Data.DataTable, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      ]
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}

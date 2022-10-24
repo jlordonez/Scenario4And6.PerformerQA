@@ -1,0 +1,53 @@
+﻿<html><body><table border = 1>
+<tr>
+<th>Material ID</th>
+<th>Material DESC</th>
+<th>Customer COD</th>
+<th>Customer DESC</th>
+<th>Distribution Channel ID</th>
+<th>Distribution Channel DESC</th>
+<th>Sales Org ID</th>
+<th>Sales Org DESC</th>
+<th>Sales District DESC</th>
+<th>Sales Doc# COD</th>
+<th>Sales Doc Type ID</th>
+<th>Order Reason ID</th>
+<th>Order Reson DESC</th>
+<th>Usage Hdr ID</th>
+<th>Usage Hdr DESC</th>
+<th>Document Date DATE</th>
+<th>Schedule Ln# ID</th>
+<th>Size ID</th>
+<th>Rejection Reason Sch Ln ID</th>
+<th>New Rejection Reason</th>
+<th>Total Rejected Quantity</th>
+<th>Status</th>
+<th>BussinessException</th>
+</tr>
+<tr>
+<td>211874895001</td>
+<td>SILK VISCOSE CRNKL-LSL-BLS</td>
+<td>22407</td>
+<td>V5 SARL</td>
+<td>10</td>
+<td>Wholesale</td>
+<td>4025</td>
+<td>RL France SAS</td>
+<td>France & Benelux</td>
+<td>30204458</td>
+<td>ZCQ</td>
+<td></td>
+<td>0</td>
+<td>321</td>
+<td>CR/PS 2021 EU Mkt 3</td>
+<td>06/23/2021 00:00:00</td>
+<td>0003</td>
+<td>S</td>
+<td>J0</td>
+<td>A6</td>
+<td>2</td>
+<td>Failed</td>
+<td> There are not J0 rejections assigned to the transaction item: 30204458
+   </td>
+</tr>
+</table></body></html>
