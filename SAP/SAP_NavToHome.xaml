@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1068,2045</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1016,1468</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_NavToHome_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -86,7 +86,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_NavToHome" sap:VirtualizedContainerService.HintSize="1026,1980" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_NavToHome" sap:VirtualizedContainerService.HintSize="1026,1403" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="elementExists" />
       <Variable x:TypeArguments="x:String" Name="getMessage" />
@@ -97,16 +97,16 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="984,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start SAP_NavToHome&quot;]" />
-    <Sequence DisplayName="Validate if Save button Appear" sap:VirtualizedContainerService.HintSize="984,623" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <Sequence DisplayName="Validate if Save button Appear" sap:VirtualizedContainerService.HintSize="984,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:UiElementExists DisplayName="Element Exists 'Button  Save (Ctrl+S)'" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="891d7c79-8df9-43d4-8df8-8184798c66b9" InformativeScreenshot="64fde8fcd1d361fa40a73a2f049c8c98" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change RL *' /&gt;&lt;sap id='tbar[0]/btn[11]' /&gt;" TimeoutMS="10000">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="891d7c79-8df9-43d4-8df8-8184798c66b9" InformativeScreenshot="64fde8fcd1d361fa40a73a2f049c8c98" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change RL *' /&gt;&lt;sap tooltip='Save   (Ctrl+S)' /&gt;" TimeoutMS="10000">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
@@ -133,7 +133,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ec9b9491-5750-4a38-872d-a2e7969c1e82" InformativeScreenshot="efb8a79593fd861dd3878322b667265e" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change RL *' /&gt;&lt;sap id='tbar[0]/btn[11]' /&gt;" TimeoutMS="10000">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ec9b9491-5750-4a38-872d-a2e7969c1e82" InformativeScreenshot="efb8a79593fd861dd3878322b667265e" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change RL *' /&gt;&lt;sap tooltip='Save   (Ctrl+S)' /&gt;" TimeoutMS="10000">
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
@@ -160,7 +160,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <PickBranch sap:VirtualizedContainerService.HintSize="426,633" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+      <PickBranch DisplayName="Save Status of Document" sap:VirtualizedContainerService.HintSize="426,633" sap2010:WorkflowViewState.IdRef="PickBranch_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -170,7 +170,7 @@
         <PickBranch.Trigger>
           <ui:UiElementExists DisplayName="Element Exists 'Order' button" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
             <ui:UiElementExists.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6753bc1a-a0af-4dd4-a6c3-f1be26481e98" InformativeScreenshot="93d3365d194b67381005981d5cb4fb4f" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change *: Initial Screen' /&gt;&lt;sap id='usr/txtRV45A-TXT_VBELN' /&gt;" TimeoutMS="5000">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6753bc1a-a0af-4dd4-a6c3-f1be26481e98" InformativeScreenshot="93d3365d194b67381005981d5cb4fb4f" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change Sales Order: Initial Screen' /&gt;&lt;sap text=' Search' /&gt;" TimeoutMS="5000">
                 <ui:Target.WaitForReady>
                   <InArgument x:TypeArguments="ui:WaitForReady" />
                 </ui:Target.WaitForReady>
@@ -186,7 +186,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'StatusPane RL'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
             <ui:GetValue.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a9ce488c-ed24-4e65-92be-47460849a2f5" InformativeScreenshot="f1604a55a6e700434df6aebfc589e2a4" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change *: Initial Screen' /&gt;&lt;sap id='sbar/pane[0]' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a9ce488c-ed24-4e65-92be-47460849a2f5" InformativeScreenshot="f1604a55a6e700434df6aebfc589e2a4" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change *: Initial Screen' /&gt;&lt;sap id='sbar/pane[0]' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -212,7 +212,7 @@
         <PickBranch.Trigger>
           <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'Save' button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
             <ui:UiElementExists.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8baf2ea-b579-483e-9f75-1a09cf56ae49" InformativeScreenshot="c3801a1439a4b4da89b9294f45b0d9c1" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Save Incomplete Document' idx='*' /&gt;&lt;sap id='usr/btnSPOP-VAROPTION1' /&gt;" TimeoutMS="5000">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8baf2ea-b579-483e-9f75-1a09cf56ae49" InformativeScreenshot="c3801a1439a4b4da89b9294f45b0d9c1" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Save Incomplete Document' /&gt;&lt;sap text='Save' /&gt;" TimeoutMS="5000">
                 <ui:Target.WaitForReady>
                   <InArgument x:TypeArguments="ui:WaitForReady" />
                 </ui:Target.WaitForReady>
@@ -232,7 +232,7 @@
             </ui:CursorPosition>
           </ui:Click.CursorPosition>
           <ui:Click.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e462fe76-fbf6-4062-b5b0-f9ed4e22c954" InformativeScreenshot="4a3bb12dc5c655f26aacf15f9e068853" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Save Incomplete Document' idx='*' /&gt;&lt;sap id='usr/btnSPOP-VAROPTION1' /&gt;">
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e462fe76-fbf6-4062-b5b0-f9ed4e22c954" InformativeScreenshot="4a3bb12dc5c655f26aacf15f9e068853" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Save Incomplete Document' /&gt;&lt;sap text='Save' /&gt;">
               <ui:Target.TimeoutMS>
                 <InArgument x:TypeArguments="x:Int32" />
               </ui:Target.TimeoutMS>
@@ -244,15 +244,15 @@
         </ui:Click>
       </PickBranch>
     </Pick>
-    <Sequence DisplayName="Select Back (F3)" sap:VirtualizedContainerService.HintSize="984,244" sap2010:WorkflowViewState.IdRef="Sequence_12">
+    <Sequence DisplayName="Select Back (F3)" sap:VirtualizedContainerService.HintSize="984,224" sap2010:WorkflowViewState.IdRef="Sequence_12">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'F3'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="f3" KeyModifiers="None" SpecialKey="True">
+      <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'F3'" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="f3" KeyModifiers="None" SpecialKey="True">
         <ui:SendHotkey.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c85bc188-9a13-4c2b-8529-dd0e293d8b8a" InformativeScreenshot="aac758f788ef58efa93e65ea9677f459" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change *: Initial Screen' /&gt;&lt;sap id='titl' /&gt;" TimeoutMS="1000">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c85bc188-9a13-4c2b-8529-dd0e293d8b8a" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' idx='*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change Sales Order: Initial Screen' /&gt;&lt;sap id='mbar' /&gt;" TimeoutMS="1000">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
