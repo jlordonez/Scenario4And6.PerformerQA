@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1068,2861</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1167,4215</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_ReasonForRejection_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -92,10 +92,9 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_ReasonForRejection" sap:VirtualizedContainerService.HintSize="981,2796" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence DisplayName="SAP_ReasonForRejection" sap:VirtualizedContainerService.HintSize="1177,4150" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="elementExist" />
       <Variable x:TypeArguments="x:Boolean" Name="bool_MaterialExists" />
@@ -108,8 +107,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="939,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Start Reason For Rejection&quot;]" />
-    <Sequence sap2010:Annotation.AnnotationText="Description: &#xA;1. Validate if Material ID exists on SAP.&#xA;2. Validate if Grid Value exists on SAP.&#xA;3. Validate if Material DESC exists on SAP." DisplayName="Validate if Sales Order Item COD, Material ID, Material DESC, Size ID exist on SAP" sap:VirtualizedContainerService.HintSize="939,692" sap2010:WorkflowViewState.IdRef="Sequence_28">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1135,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Start Reason For Rejection&quot;]" />
+    <Sequence sap2010:Annotation.AnnotationText="Description: &#xA;1. Validate if Material ID exists on SAP.&#xA;2. Validate if Grid Value exists on SAP.&#xA;3. Validate if Material DESC exists on SAP." DisplayName="Validate if Sales Order Item COD, Material ID, Material DESC, Size ID exist on SAP" sap:VirtualizedContainerService.HintSize="1135,692" sap2010:WorkflowViewState.IdRef="Sequence_28">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -156,12 +155,12 @@ dt_Afs_items.AsEnumerable.Any(Function(DataRow) DataRow("Short Text").ToString.T
                 <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <Throw DisplayName="Throw BRE" Exception="[New BusinessRuleException(&quot;The Sales Order Item COD (&quot; + in_TransactionItem.SpecificContent(&quot;SalesOrderItemCOD&quot;).ToString + &quot;), &quot; + &#xD;&#xA;                                              &quot;Material ID (&quot; + in_TransactionItem.SpecificContent(&quot;MaterialID&quot;).ToString + &quot;), &quot; +&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  &quot;Size ID (&quot; + in_TransactionItem.SpecificContent(&quot;SizeID&quot;).ToString + &quot;), &quot; +&#xD;&#xA;                                              &quot;Material DESC ( &quot; + in_TransactionItem.SpecificContent(&quot;MaterialDESC&quot;).ToString + &quot;), &quot; +&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  &quot;are not assigned to the 'Sales Doc Number'&quot; )]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+            <Throw DisplayName="Throw BRE" Exception="[New BusinessRuleException(&quot;The Sales Order Item COD (&quot; + in_TransactionItem.SpecificContent(&quot;SalesOrderItemCOD&quot;).ToString + &quot;), &quot; + &#xA;                                              &quot;Material ID (&quot; + in_TransactionItem.SpecificContent(&quot;MaterialID&quot;).ToString + &quot;), &quot; +&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  &quot;Size ID (&quot; + in_TransactionItem.SpecificContent(&quot;SizeID&quot;).ToString + &quot;), &quot; +&#xA;                                              &quot;Material DESC ( &quot; + in_TransactionItem.SpecificContent(&quot;MaterialDESC&quot;).ToString + &quot;), &quot; +&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  &quot;are not assigned to the 'Sales Doc Number'&quot; )]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
           </Sequence>
         </If.Else>
       </If>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;1. Validate if Schedule Line ID Exists on SAP.&#xA;2. Validate if Rejection Reason Sch Ln ID exists on SAP." DisplayName="Validate if Schedule LIne ID and Rejectio Reason Sch Ln ID exist on SAP" sap:VirtualizedContainerService.HintSize="939,698" sap2010:WorkflowViewState.IdRef="Sequence_31">
+    <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;1. Validate if Schedule Line ID Exists on SAP.&#xA;2. Validate if Rejection Reason Sch Ln ID exists on SAP." DisplayName="Validate if Schedule LIne ID and Rejectio Reason Sch Ln ID exist on SAP" sap:VirtualizedContainerService.HintSize="1135,698" sap2010:WorkflowViewState.IdRef="Sequence_31">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -223,22 +222,22 @@ Select d("Index")).ToList]</InArgument>
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Validate if Index Contains the Transaction Item" sap:VirtualizedContainerService.HintSize="939,972" sap2010:WorkflowViewState.IdRef="Sequence_34">
+    <Sequence DisplayName="Validate if Index Contains the Transaction Item" sap:VirtualizedContainerService.HintSize="1135,2326" sap2010:WorkflowViewState.IdRef="Sequence_34">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[indexList.Count &gt; 0]" DisplayName="Validate if the IndexList Contains the Row Item" sap:VirtualizedContainerService.HintSize="897,880" sap2010:WorkflowViewState.IdRef="If_9">
+      <If Condition="[indexList.Count &gt; 0]" DisplayName="Validate if the IndexList Contains the Row Item" sap:VirtualizedContainerService.HintSize="1093,2234" sap2010:WorkflowViewState.IdRef="If_9">
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="476,722" sap2010:WorkflowViewState.IdRef="Sequence_35">
+          <Sequence sap:VirtualizedContainerService.HintSize="672,2076" sap2010:WorkflowViewState.IdRef="Sequence_35">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign - Index" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+            <Assign DisplayName="Assign - Index" sap:VirtualizedContainerService.HintSize="630,60" sap2010:WorkflowViewState.IdRef="Assign_9">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[Index]</OutArgument>
               </Assign.To>
@@ -246,21 +245,21 @@ Select d("Index")).ToList]</InArgument>
                 <InArgument x:TypeArguments="x:String">[IndexList(0).ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Change Sales Order'" sap:VirtualizedContainerService.HintSize="434,530" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="f2d7595730b72e2776b8b1e574873e16" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change RL *' /&gt;">
+            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Change Sales Order'" sap:VirtualizedContainerService.HintSize="630,1884" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="f2d7595730b72e2776b8b1e574873e16" Selector="&lt;wnd app='*.exe' title='Change RL *' /&gt;">
               <ui:WindowScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Check the J0 Item and Reason for Rejection" sap:VirtualizedContainerService.HintSize="376,384" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <Sequence DisplayName="Check the J0 Item and Reason for Rejection" sap:VirtualizedContainerService.HintSize="596,1738" sap2010:WorkflowViewState.IdRef="Sequence_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check the J0 items" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_2">
+                    <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check the J0 items" sap:VirtualizedContainerService.HintSize="554,106" sap2010:WorkflowViewState.IdRef="Check_2">
                       <ui:Check.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bcdd9eb8-1d07-404a-a051-cf4de3ab695b" InformativeScreenshot="32ca4e0455d1d5ac501155ee06cd40ac" Selector="[String.Format(&quot;&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\02/ssubSUBSCREEN_BODY:SAPLJ3AD:2930/ssubSUBITEM_L2:SAPMJ3AS:2001/tblSAPMJ3ASTCTRL_LINE_ENTRY' tableRow='{0}' /&gt;&quot;, Index)]">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bcdd9eb8-1d07-404a-a051-cf4de3ab695b" InformativeScreenshot="32ca4e0455d1d5ac501155ee06cd40ac" Selector="[String.Format(&quot;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change RL*' /&gt;&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\02/ssubSUBSCREEN_BODY:SAPLJ3AD:2930/ssubSUBITEM_L2:SAPMJ3AS:2001/tblSAPMJ3ASTCTRL_LINE_ENTRY' tableRow='{0}' /&gt;&quot;, Index)]">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
@@ -270,8 +269,8 @@ Select d("Index")).ToList]</InArgument>
                         </ui:Target>
                       </ui:Check.Target>
                     </ui:Check>
-                    <Delay DisplayName="Delay 100ms" Duration="[TimeSpan.FromMilliseconds(100)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                    <Sequence DisplayName="Validate if Fast Changes button exists" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <Delay DisplayName="Delay 100ms" Duration="[TimeSpan.FromMilliseconds(100)]" sap:VirtualizedContainerService.HintSize="554,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                    <Sequence DisplayName="Validate if Fast Changes button exists" sap:VirtualizedContainerService.HintSize="554,66" sap2010:WorkflowViewState.IdRef="Sequence_22">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -280,7 +279,7 @@ Select d("Index")).ToList]</InArgument>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:UiElementExists DisplayName="Element Exists 'Button  Fast Change'" Exists="[elementExist]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                         <ui:UiElementExists.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c3d23302-bbda-4d70-b606-42e145076efb" InformativeScreenshot="0d2573d7d3c3b9dcf1a1d25a6b5fd88d" Selector="&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\02/ssubSUBSCREEN_BODY:SAPLJ3AD:2930/subSUBBUTTON1:SAPLJ3AD:2801/btnBT_FCHG' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_1second&quot;).ToString)]">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c3d23302-bbda-4d70-b606-42e145076efb" InformativeScreenshot="0d2573d7d3c3b9dcf1a1d25a6b5fd88d" Selector="&lt;wnd cls='SAP_FRONTEND_EMBEDDED' /&gt;&lt;sap tooltip='Fast Change' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_1second&quot;).ToString)]">
                             <ui:Target.WaitForReady>
                               <InArgument x:TypeArguments="ui:WaitForReady" />
                             </ui:Target.WaitForReady>
@@ -307,7 +306,7 @@ Select d("Index")).ToList]</InArgument>
                                 </ui:CursorPosition>
                               </ui:Click.CursorPosition>
                               <ui:Click.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="87f6480b-f838-401e-b306-7e13e5c99f59" InformativeScreenshot="0d2573d7d3c3b9dcf1a1d25a6b5fd88d" Selector="&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\02/ssubSUBSCREEN_BODY:SAPLJ3AD:2930/subSUBBUTTON1:SAPLJ3AD:2801/btnBT_FCHG' /&gt;">
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="87f6480b-f838-401e-b306-7e13e5c99f59" InformativeScreenshot="0d2573d7d3c3b9dcf1a1d25a6b5fd88d" Selector="&lt;wnd cls='SAP_FRONTEND_EMBEDDED' /&gt;&lt;sap tooltip='Fast Change' /&gt;">
                                   <ui:Target.TimeoutMS>
                                     <InArgument x:TypeArguments="x:Int32" />
                                   </ui:Target.TimeoutMS>
@@ -330,16 +329,16 @@ Select d("Index")).ToList]</InArgument>
                         </If.Else>
                       </If>
                     </Sequence>
-                    <Sequence DisplayName="Validate if Fast Change Windows Exists" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                    <Sequence DisplayName="Validate if Fast Change Windows Exists" sap:VirtualizedContainerService.HintSize="554,1332" sap2010:WorkflowViewState.IdRef="Sequence_15">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:UiElementExists DisplayName="Element Exists 'Fast Change Windows'" Exists="[elementExist]" sap:VirtualizedContainerService.HintSize="512,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
                         <ui:UiElementExists.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8191b298-1e40-4dd3-9d57-463052df6446" InformativeScreenshot="d7f52117caaf36dbb87ae2a28cb68ee6" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Fast change of Change RL *' idx='*' /&gt;&lt;sap id='usr/subSUBHEADER:SAPMJ3AS:7000/tabsTABSTR_FAST_CHANGE/tabpSERL' text='Rej.reason' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_1second&quot;).ToString)]">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8191b298-1e40-4dd3-9d57-463052df6446" InformativeScreenshot="d7f52117caaf36dbb87ae2a28cb68ee6" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Fast change of Change RL *' /&gt;&lt;sap text='Rej.reason' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_1second&quot;).ToString)]">
                             <ui:Target.WaitForReady>
                               <InArgument x:TypeArguments="ui:WaitForReady" />
                             </ui:Target.WaitForReady>
@@ -354,7 +353,7 @@ Select d("Index")).ToList]</InArgument>
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Fast Change Windows'" sap:VirtualizedContainerService.HintSize="434,664" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="c08a9f7bbb681516f781f3af6041ccbb" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Fast change of Change RL *' idx='*' /&gt;&lt;sap id='usr/subSUBHEADER:SAPMJ3AS:7000/tabsTABSTR_FAST_CHANGE/tabpSERL' text='Rej.reason' /&gt;">
+                            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Fast Change Windows'" sap:VirtualizedContainerService.HintSize="434,664" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="c08a9f7bbb681516f781f3af6041ccbb" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Fast change of Change RL*' /&gt;">
                               <ui:WindowScope.Body>
                                 <ActivityAction x:TypeArguments="x:Object">
                                   <ActivityAction.Argument>
@@ -378,7 +377,7 @@ Select d("Index")).ToList]</InArgument>
                                         </ui:CursorPosition>
                                       </ui:Click.CursorPosition>
                                       <ui:Click.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d8b22a29-16f8-4f69-80cb-ca60e6b743f6" InformativeScreenshot="19ad91273d8370779f774d1ed651bab6">
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8b22a29-16f8-4f69-80cb-ca60e6b743f6" InformativeScreenshot="19ad91273d8370779f774d1ed651bab6" Selector="&lt;sap text='Rej.reason' /&gt;">
                                           <ui:Target.TimeoutMS>
                                             <InArgument x:TypeArguments="x:Int32" />
                                           </ui:Target.TimeoutMS>
@@ -390,7 +389,7 @@ Select d("Index")).ToList]</InArgument>
                                     </ui:Click>
                                     <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'A6'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[in_Config(&quot;sapReasonForRejectionType&quot;).ToString]">
                                       <ui:TypeInto.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44e81732-8912-466e-a96b-3a4a9cc773ef" InformativeScreenshot="3f699d9b67526a807fa9f22b09e3465a" Selector="&lt;sap id='usr/subSUBHEADER:SAPMJ3AS:7000/tabsTABSTR_FAST_CHANGE/tabpSERL/ssubSUB_FAST_CHANGE:SAPMJ3AS:7080/ctxtJ_3ASZDID-ABGRU' /&gt;">
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44e81732-8912-466e-a96b-3a4a9cc773ef" InformativeScreenshot="3f699d9b67526a807fa9f22b09e3465a" Selector="&lt;sap tooltip='Reason for rejection of quotations and sales orders' /&gt;">
                                           <ui:Target.TimeoutMS>
                                             <InArgument x:TypeArguments="x:Int32" />
                                           </ui:Target.TimeoutMS>
@@ -412,7 +411,7 @@ Select d("Index")).ToList]</InArgument>
                                         </ui:CursorPosition>
                                       </ui:Click.CursorPosition>
                                       <ui:Click.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="724a7bdd-0edc-4163-9379-da33e9b6dd15" InformativeScreenshot="07b33c086432d03319a96a3060e9fe7d" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Fast change of Change RL *' idx='*' /&gt;&lt;sap id='tbar[0]/btn[6]' /&gt;">
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="724a7bdd-0edc-4163-9379-da33e9b6dd15" InformativeScreenshot="07b33c086432d03319a96a3060e9fe7d" Selector="&lt;sap id='tbar[0]/btn[6]' /&gt;">
                                           <ui:Target.TimeoutMS>
                                             <InArgument x:TypeArguments="x:Int32" />
                                           </ui:Target.TimeoutMS>
@@ -479,6 +478,6 @@ Select d("Index")).ToList]</InArgument>
         </If.Else>
       </If>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="939,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;End Reson For Rejection&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1135,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;End Reson For Rejection&quot;]" />
   </Sequence>
 </Activity>

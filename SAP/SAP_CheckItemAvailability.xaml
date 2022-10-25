@@ -87,7 +87,6 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="SAP_CheckItemAvailability" sap:VirtualizedContainerService.HintSize="2117,4728" sap2010:WorkflowViewState.IdRef="Sequence_1">
