@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1107,5213</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1006,1596</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_LoginNetWeaver_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -89,7 +89,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: Login Netweaver and Open SAP Client&#xA;Pre Condition: SAP Netweaver Landing screen&#xA;Post Condition: SAP Client Landing Screen" DisplayName="SAP_LoginNetWeaver" sap:VirtualizedContainerService.HintSize="1117,5148" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: Login Netweaver and Open SAP Client&#xA;Pre Condition: SAP Netweaver Landing screen&#xA;Post Condition: SAP Client Landing Screen" DisplayName="SAP_LoginNetWeaver" sap:VirtualizedContainerService.HintSize="376,1531" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Username" />
       <Variable x:TypeArguments="ss:SecureString" Name="Password" />
@@ -105,7 +105,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1075,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Open SAP LoginNetWeaver start&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Open SAP LoginNetWeaver start&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -113,7 +113,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Credential]" DisplayName="Get NetWeaver Credential" FolderPath="[in_OrchestratorAssetFolder]" sap:VirtualizedContainerService.HintSize="1075,180" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[Username]">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Credential]" DisplayName="Get NetWeaver Credential" FolderPath="[in_OrchestratorAssetFolder]" sap:VirtualizedContainerService.HintSize="334,180" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[Username]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -121,7 +121,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotCredential>
-    <Sequence DisplayName="Close Restore page popup" sap:VirtualizedContainerService.HintSize="1075,66" sap2010:WorkflowViewState.IdRef="Sequence_27">
+    <Sequence DisplayName="Close Restore page popup" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_27">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -130,11 +130,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:UiElementExists DisplayName="Element Exists 'Restore Page'" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_11">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="468d37ab-0b91-4664-b2ed-f57058ed7812" InformativeScreenshot="06efc2a3b78537ff387faf509d0d9fa2" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Restore pages?' /&gt;" TimeoutMS="1000">
-            <ui:Target.WaitForReady>
-              <InArgument x:TypeArguments="ui:WaitForReady" />
-            </ui:Target.WaitForReady>
-          </ui:Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="468d37ab-0b91-4664-b2ed-f57058ed7812" InformativeScreenshot="06efc2a3b78537ff387faf509d0d9fa2" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Restore pages?' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]" WaitForReady="NONE" />
         </ui:UiElementExists.Target>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -186,16 +182,16 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Login SAP NetWeaver" sap:VirtualizedContainerService.HintSize="1075,1287" sap2010:WorkflowViewState.IdRef="Sequence_30">
+    <Sequence DisplayName="Login SAP NetWeaver" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_30">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:UiElementExists DisplayName="Element Exists 'Password'" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="512,86" sap2010:WorkflowViewState.IdRef="UiElementExists_12">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5343e925-c9ae-4c85-88c7-a9ed2e202151" Selector="&lt;html app='chrome.exe' htmlwindowname='logonAppPage' title='SAP NetWeaver Portal' /&gt;&lt;webctrl tag='NOBR' aaname='Password' /&gt;" TimeoutMS="10000" WaitForReady="COMPLETE" />
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5343e925-c9ae-4c85-88c7-a9ed2e202151" Selector="&lt;html app='chrome.exe' htmlwindowname='logonAppPage' title='SAP NetWeaver Portal' /&gt;&lt;webctrl tag='NOBR' aaname='Password' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]" WaitForReady="COMPLETE" />
         </ui:UiElementExists.Target>
       </ui:UiElementExists>
       <If Condition="[elementExists]" DisplayName="Validate if Windows Login exists" sap:VirtualizedContainerService.HintSize="512,1069" sap2010:WorkflowViewState.IdRef="If_8">
@@ -303,7 +299,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Login SAP NetWeaver Status" sap:VirtualizedContainerService.HintSize="1075,264" sap2010:WorkflowViewState.IdRef="Sequence_28">
+    <Sequence DisplayName="Login SAP NetWeaver Status" sap:VirtualizedContainerService.HintSize="334,264" sap2010:WorkflowViewState.IdRef="Sequence_28">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -319,11 +315,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Element Exists 'Log Off'" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be6d29bb-9555-46e7-96b6-59279bbda150" InformativeScreenshot="979c8e856150670d523858b0dcf373d2" Selector="&lt;html app='chrome.exe' htmlwindowname='WID16*' title='* - SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='Log off' tag='SPAN' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]">
-              <ui:Target.WaitForReady>
-                <InArgument x:TypeArguments="ui:WaitForReady" />
-              </ui:Target.WaitForReady>
-            </ui:Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be6d29bb-9555-46e7-96b6-59279bbda150" InformativeScreenshot="979c8e856150670d523858b0dcf373d2" Selector="&lt;html app='chrome.exe' htmlwindowname='WID16*' title='* - SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='Log off' tag='SPAN' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]" WaitForReady="NONE" />
           </ui:UiElementExists.Target>
         </ui:UiElementExists>
         <If Condition="[elementExists]" sap:VirtualizedContainerService.HintSize="484,370" sap2010:WorkflowViewState.IdRef="If_9">
@@ -357,11 +349,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Element Exists 'Autentication Failed'" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_10">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="90da245c-1d10-4534-bb41-ccf42ef14aa2" InformativeScreenshot="d96b2411f4eee83cef26780030c04834" Selector="&lt;html app='chrome.exe' htmlwindowname='logonAppPage' title='SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='User authentication failed ' tag='SPAN' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]">
-              <ui:Target.WaitForReady>
-                <InArgument x:TypeArguments="ui:WaitForReady" />
-              </ui:Target.WaitForReady>
-            </ui:Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="90da245c-1d10-4534-bb41-ccf42ef14aa2" InformativeScreenshot="d96b2411f4eee83cef26780030c04834" Selector="&lt;html app='chrome.exe' htmlwindowname='logonAppPage' title='SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='User authentication failed ' tag='SPAN' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]" WaitForReady="NONE" />
           </ui:UiElementExists.Target>
         </ui:UiElementExists>
         <If Condition="[elementExists]" DisplayName="Validate if Authentication Failed" sap:VirtualizedContainerService.HintSize="484,584" sap2010:WorkflowViewState.IdRef="If_10">
@@ -403,19 +391,19 @@
         </If>
       </Sequence>
     </Sequence>
-    <Sequence DisplayName="Download ECC Tx File" sap:VirtualizedContainerService.HintSize="1075,1406" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="Download ECC Tx File" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:UiElementExists DisplayName="Element Exists Core SAP" Exists="[ProdSystem]" sap:VirtualizedContainerService.HintSize="1033,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+      <ui:UiElementExists DisplayName="Element Exists Core SAP" Exists="[ProdSystem]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
         <ui:UiElementExists.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="122e0751-7fee-4a57-b881-b5d8c689e6f9" InformativeScreenshot="b2d0ae771164fd0fb1629770ae14c2d2" Selector="&lt;html app='chrome.exe' title='*SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='ECC*' tag='A' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]" WaitForReady="NONE" />
         </ui:UiElementExists.Target>
       </ui:UiElementExists>
-      <If Condition="[ProdSystem]" DisplayName="Check Is Prod System?" sap:VirtualizedContainerService.HintSize="1033,1168" sap2010:WorkflowViewState.IdRef="If_4">
+      <If Condition="[ProdSystem]" DisplayName="Check Is Prod System?" sap:VirtualizedContainerService.HintSize="484,224" sap2010:WorkflowViewState.IdRef="If_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -423,13 +411,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Download ECC Tx File" sap:VirtualizedContainerService.HintSize="554,1010" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Download ECC Tx File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="FirstIteration" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -505,7 +493,7 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <ui:GetLastDownloadedFile IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+&quot;\Downloads&quot;]" File="[txFile]" sap:VirtualizedContainerService.HintSize="434,453" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_4">
+          <ui:GetLastDownloadedFile IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+&quot;\Downloads&quot;]" File="[txFile]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_4">
             <ui:GetLastDownloadedFile.Body>
               <ActivityAction>
                 <Sequence DisplayName="Download Q1C Tx File" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -538,7 +526,7 @@
             </ui:GetLastDownloadedFile.Body>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -546,10 +534,10 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Excecute txFile" sap:VirtualizedContainerService.HintSize="1075,445" sap2010:WorkflowViewState.IdRef="Sequence_16">
+    <Sequence DisplayName="Excecute txFile" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -578,16 +566,16 @@
         </ui:RetryScope.Condition>
       </ui:RetryScope>
     </Sequence>
-    <Sequence DisplayName="Validate SAP GUI security" sap:VirtualizedContainerService.HintSize="1075,324" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence DisplayName="Validate SAP GUI security" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" ContinueOnError="True" DisplayName="Find Element - Allow" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
         <ui:WaitUiElementAppear.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dbe3e8f4-e866-4429-bb1c-5a2ff8987168" Selector="&lt;wnd app='sapguiserver.exe' title='SAP GUI Security' /&gt;&lt;wnd title='&amp;amp;Allow' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dbe3e8f4-e866-4429-bb1c-5a2ff8987168" Selector="&lt;wnd app='sapguiserver.exe' title='SAP GUI Security' /&gt;&lt;wnd title='&amp;amp;Allow' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]" WaitForReady="INTERACTIVE" />
         </ui:WaitUiElementAppear.Target>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -618,16 +606,16 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:Click>
     </Sequence>
-    <Sequence DisplayName="Validate SAP Landing Screen" sap:VirtualizedContainerService.HintSize="1075,485" sap2010:WorkflowViewState.IdRef="Sequence_18">
+    <Sequence DisplayName="Validate SAP Landing Screen" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_18">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:UiElementExists DisplayName="Element Exists - SAP Landing Screen" Exists="[LandingScreenExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a48af930-98b1-4cf6-9913-361da7325832" InformativeScreenshot="8f75412598c506eb747fe94e4868277f" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' title='SAP Easy Access  -  *' /&gt;&lt;ctrl role='client' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a48af930-98b1-4cf6-9913-361da7325832" InformativeScreenshot="8f75412598c506eb747fe94e4868277f" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' title='SAP Easy Access  -  *' /&gt;&lt;ctrl role='client' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]" WaitForReady="NONE" />
         </ui:UiElementExists.Target>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -648,6 +636,6 @@
         </If.Then>
       </If>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1075,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Open SAP LoginNetWeaver end&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Open SAP LoginNetWeaver end&quot;]" />
   </Sequence>
 </Activity>
