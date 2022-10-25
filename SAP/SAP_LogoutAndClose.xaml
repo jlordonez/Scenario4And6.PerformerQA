@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SAP_LogoutAndClose" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1068,929" sap2010:WorkflowViewState.IdRef="SAP_LogoutAndClose_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_LogoutAndClose" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1006,2322" sap2010:WorkflowViewState.IdRef="SAP_LogoutAndClose_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
       <x:String>System.Activities</x:String>
@@ -63,9 +63,9 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: Logs out and Closes SAP&#xA;Pre Condition: SAP Landing Screen&#xA;Post Condition: N/A" DisplayName="SAP_LogoutAndClose" sap:VirtualizedContainerService.HintSize="376,619" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: Logs out and Closes SAP&#xA;Pre Condition: SAP Landing Screen&#xA;Post Condition: N/A" DisplayName="SAP_LogoutAndClose" sap:VirtualizedContainerService.HintSize="596,2257" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="SAPLogoffExists" />
+      <Variable x:TypeArguments="x:Boolean" Name="elementExists" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -73,27 +73,27 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SAP_LogoutAndClose start&quot;]" />
-    <Sequence DisplayName="SAP Logon: Change Sales Order (Desktop App)" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SAP_LogoutAndClose start&quot;]" />
+    <Sequence DisplayName="SAP Logon: Change Sales Order (Desktop App)" sap:VirtualizedContainerService.HintSize="554,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:UiElementExists DisplayName="Element Exists - SAP Change Sales Order Exist Button" Exists="[SAPLogoffExists]" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+      <ui:UiElementExists DisplayName="Element Exists - SAP Change Sales Order Exist Button" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,86" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="46ad797d-5a67-48f5-b563-bb4ea51782dc" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Sales Order: Initial Screen' /&gt;&lt;wnd cls='Button' aaname='Exit' /&gt;" TimeoutMS="3000">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="46ad797d-5a67-48f5-b563-bb4ea51782dc" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change Sales Order: *' /&gt;&lt;sap text='Exit' /&gt;" TimeoutMS="3000">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
           </ui:Target>
         </ui:UiElementExists.Target>
       </ui:UiElementExists>
-      <If Condition="[SAPLogoffExists]" DisplayName="Validate SAP Logon Changes Sales Order" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[elementExists]" DisplayName="Validate SAP Logon Changes Sales Order" sap:VirtualizedContainerService.HintSize="484,385" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -117,7 +117,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7a9143a5-1c60-4e7d-a718-b36179030df1" InformativeScreenshot="a6cfec00943b124e7ce638b630c11bff" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Sales Order: Initial Screen' /&gt;&lt;wnd cls='Button' aaname='Exit' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7a9143a5-1c60-4e7d-a718-b36179030df1" InformativeScreenshot="a6cfec00943b124e7ce638b630c11bff" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change Sales Order: *' /&gt;&lt;sap text='Exit' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -131,23 +131,23 @@
         </If.Then>
       </If>
     </Sequence>
-    <Sequence DisplayName="SAP Logoff Client (Desktop App)" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="SAP Logoff Client (Desktop App)" sap:VirtualizedContainerService.HintSize="554,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:UiElementExists DisplayName="Element Exists - SAP Window LogOff Button" Exists="[SAPLogoffExists]" sap:VirtualizedContainerService.HintSize="484,86" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+      <ui:UiElementExists DisplayName="Element Exists - SAP Window LogOff Button" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,86" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="46ad797d-5a67-48f5-b563-bb4ea51782dc" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access  -  User Menu for BOT SYS-QUPBOT09' /&gt;&lt;wnd cls='Button' aaname='Log off' /&gt;" TimeoutMS="3000">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="46ad797d-5a67-48f5-b563-bb4ea51782dc" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='SAP Easy Access  -  *' /&gt;&lt;sap text='Log off' /&gt;" TimeoutMS="3000">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
           </ui:Target>
         </ui:UiElementExists.Target>
       </ui:UiElementExists>
-      <If Condition="[SAPLogoffExists]" DisplayName="Validate SAP Window" sap:VirtualizedContainerService.HintSize="484,549" sap2010:WorkflowViewState.IdRef="If_3">
+      <If Condition="[elementExists]" DisplayName="Validate SAP Window" sap:VirtualizedContainerService.HintSize="484,559" sap2010:WorkflowViewState.IdRef="If_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -174,7 +174,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7a9143a5-1c60-4e7d-a718-b36179030df1" InformativeScreenshot="a6cfec00943b124e7ce638b630c11bff" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access  -  User Menu for BOT SYS-QUPBOT09' /&gt;&lt;wnd cls='Button' aaname='Log off' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7a9143a5-1c60-4e7d-a718-b36179030df1" InformativeScreenshot="a6cfec00943b124e7ce638b630c11bff" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='SAP Easy Access  -  *' /&gt;&lt;sap text='Log off' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -196,7 +196,7 @@
                 </ui:CursorPosition>
               </ui:ClickText.CursorPosition>
               <ui:ClickText.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cdbef50f-21b1-4f66-b835-992db4f7faca" InformativeScreenshot="61029f4643fbbe109371557a43b5390f" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Log Off' idx='*' /&gt;&lt;wnd ctrlid='101' /&gt;" WaitForReady="INTERACTIVE">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cdbef50f-21b1-4f66-b835-992db4f7faca" InformativeScreenshot="61029f4643fbbe109371557a43b5390f" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Log Off' /&gt;&lt;sap id='usr' /&gt;" WaitForReady="INTERACTIVE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -207,14 +207,88 @@
         </If.Then>
       </If>
     </Sequence>
-    <Sequence DisplayName="Logout SAP Netweaver (Google Chrome)" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <Sequence DisplayName="SAP Bussiness Client Window" sap:VirtualizedContainerService.HintSize="554,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:UiElementExists DisplayName="Element Exists - SAP NetWeaver LogOff Button" Exists="[SAPLogoffExists]" sap:VirtualizedContainerService.HintSize="484,86" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+      <ui:UiElementExists DisplayName="Element Exists 'text Do'" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+        <ui:UiElementExists.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="db594e01-1b41-43df-8d14-699198353acc" InformativeScreenshot="4d12214de7806162c98f52329e35c6d1" Selector="&lt;wnd aaname='SAP Business Client Information: Do you want to exit?' app='nwbc.exe' cls='HwndWrapper*' title='SAP Business Client' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:UiElementExists.Target>
+      </ui:UiElementExists>
+      <If Condition="[elementExists]" DisplayName="Validate if Business Client Window exists" sap:VirtualizedContainerService.HintSize="484,531" sap2010:WorkflowViewState.IdRef="If_5">
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'Remember my choice'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_1">
+              <ui:Check.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ee9c50e2-4db0-4465-97f7-3408ef0598ad" InformativeScreenshot="5d84167da876ecbf9efad925949877f1" Selector="&lt;wnd aaname='SAP Business Client Information: Do you want to exit?' app='nwbc.exe' cls='HwndWrapper*' title='SAP Business Client' /&gt;&lt;ctrl name='Remember my choice' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Check.Target>
+            </ui:Check>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'text  Exit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="01a4cfa1-c0ec-4226-a3f4-cbc8b88b7e6f" InformativeScreenshot="2e08fa3e53310dc003c72e3103860ddf" Selector="&lt;wnd aaname='SAP Business Client Information: Do you want to exit?' app='nwbc.exe' cls='HwndWrapper*' title='SAP Business Client' /&gt;&lt;ctrl name='Exit' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+    <Sequence DisplayName="Logout SAP Netweaver (Google Chrome)" sap:VirtualizedContainerService.HintSize="554,957" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:UiElementExists DisplayName="Element Exists - SAP NetWeaver LogOff Button" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="512,86" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
         <ui:UiElementExists.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="46ad797d-5a67-48f5-b563-bb4ea51782dc" Selector="&lt;html app='chrome.exe' title='*SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='Log off' tag='SPAN' /&gt;" TimeoutMS="3000">
             <ui:Target.WaitForReady>
@@ -223,7 +297,7 @@
           </ui:Target>
         </ui:UiElementExists.Target>
       </ui:UiElementExists>
-      <If Condition="[SAPLogoffExists]" DisplayName="Validate SAP NetWeaver" sap:VirtualizedContainerService.HintSize="484,593" sap2010:WorkflowViewState.IdRef="If_2">
+      <If Condition="[elementExists]" DisplayName="Validate SAP NetWeaver" sap:VirtualizedContainerService.HintSize="512,739" sap2010:WorkflowViewState.IdRef="If_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -231,14 +305,14 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Logout SAP Netweaver" sap:VirtualizedContainerService.HintSize="376,406" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Logout SAP Netweaver" sap:VirtualizedContainerService.HintSize="476,552" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Logoff" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Logoff" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -257,7 +331,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Yes - Confirm Logoff" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Yes - Confirm Logoff" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -279,7 +353,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach SAP NetWeaver" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="ec5aab06c8239cd8221afec709bfc71f" Selector="&lt;html app='chrome.exe' htmlwindowname='logonAppPage' title='SAP NetWeaver Portal' /&gt;">
+            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach SAP NetWeaver" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="ec5aab06c8239cd8221afec709bfc71f" Selector="&lt;html app='chrome.exe' htmlwindowname='logonAppPage' title='SAP NetWeaver Portal' /&gt;">
               <ui:BrowserScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -290,7 +364,7 @@
               </ui:BrowserScope.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -299,14 +373,14 @@
         </If.Then>
       </If>
     </Sequence>
-    <Sequence DisplayName="Close SAP Logon 760" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence DisplayName="Close SAP Logon 760" sap:VirtualizedContainerService.HintSize="554,531" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:UiElementExists DisplayName="Element Exists 'push button  Log On'" Exists="[SAPLogoffExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+      <ui:UiElementExists DisplayName="Element Exists 'push button  Log On'" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
         <ui:UiElementExists.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f4020e52-5b80-4007-a400-e59ea149f3f5" InformativeScreenshot="48528e7df97797459353756a10ff7fec" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='SAP Logon 760' /&gt;&lt;wnd ctrlid='1068' title='&amp;amp;Log On' /&gt;&lt;ctrl name='Log On' role='push button' /&gt;">
             <ui:Target.TimeoutMS>
@@ -318,7 +392,7 @@
           </ui:Target>
         </ui:UiElementExists.Target>
       </ui:UiElementExists>
-      <If Condition="[SAPLogoffExists]" sap:VirtualizedContainerService.HintSize="484,293" sap2010:WorkflowViewState.IdRef="If_4">
+      <If Condition="[elementExists]" DisplayName="Validate SAP Logon 760 exists" sap:VirtualizedContainerService.HintSize="484,293" sap2010:WorkflowViewState.IdRef="If_4">
         <If.Then>
           <ui:CloseApplication DisplayName="Close Application - SAP Logon 760" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
             <ui:CloseApplication.Target>
@@ -335,6 +409,6 @@
         </If.Then>
       </If>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;SAP_LogoutAndClose end&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;SAP_LogoutAndClose end&quot;]" />
   </Sequence>
 </Activity>
