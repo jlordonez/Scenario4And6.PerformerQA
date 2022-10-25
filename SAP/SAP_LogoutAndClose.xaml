@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SAP_LogoutAndClose" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1006,2322" sap2010:WorkflowViewState.IdRef="SAP_LogoutAndClose_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_LogoutAndClose" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1006,3562</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SAP_LogoutAndClose_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
       <x:String>System.Activities</x:String>
@@ -29,10 +37,13 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -61,9 +72,19 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: Logs out and Closes SAP&#xA;Pre Condition: SAP Landing Screen&#xA;Post Condition: N/A" DisplayName="SAP_LogoutAndClose" sap:VirtualizedContainerService.HintSize="596,2257" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: Logs out and Closes SAP&#xA;Pre Condition: SAP Landing Screen&#xA;Post Condition: N/A" DisplayName="SAP_LogoutAndClose" sap:VirtualizedContainerService.HintSize="596,3497" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="elementExists" />
     </Sequence.Variables>
@@ -74,16 +95,16 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SAP_LogoutAndClose start&quot;]" />
-    <Sequence DisplayName="SAP Logon: Change Sales Order (Desktop App)" sap:VirtualizedContainerService.HintSize="554,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <Sequence DisplayName="SAP Logon: Change Sales Order (Desktop App)" sap:VirtualizedContainerService.HintSize="554,603" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:UiElementExists DisplayName="Element Exists - SAP Change Sales Order Exist Button" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,86" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="46ad797d-5a67-48f5-b563-bb4ea51782dc" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change Sales Order: *' /&gt;&lt;sap text='Exit' /&gt;" TimeoutMS="3000">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="46ad797d-5a67-48f5-b563-bb4ea51782dc" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change *' /&gt;&lt;sap text='Exit' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_1second&quot;).ToString)]">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
@@ -117,7 +138,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7a9143a5-1c60-4e7d-a718-b36179030df1" InformativeScreenshot="a6cfec00943b124e7ce638b630c11bff" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change Sales Order: *' /&gt;&lt;sap text='Exit' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7a9143a5-1c60-4e7d-a718-b36179030df1" InformativeScreenshot="a6cfec00943b124e7ce638b630c11bff" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change *' /&gt;&lt;sap text='Exit' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -140,7 +161,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:UiElementExists DisplayName="Element Exists - SAP Window LogOff Button" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,86" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="46ad797d-5a67-48f5-b563-bb4ea51782dc" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='SAP Easy Access  -  *' /&gt;&lt;sap text='Log off' /&gt;" TimeoutMS="3000">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="46ad797d-5a67-48f5-b563-bb4ea51782dc" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='SAP Easy Access  -  *' /&gt;&lt;sap text='Log off' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_1second&quot;).ToString)]">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
@@ -162,7 +183,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Exit Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Exit Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -196,7 +217,7 @@
                 </ui:CursorPosition>
               </ui:ClickText.CursorPosition>
               <ui:ClickText.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cdbef50f-21b1-4f66-b835-992db4f7faca" InformativeScreenshot="61029f4643fbbe109371557a43b5390f" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Log Off' /&gt;&lt;sap id='usr' /&gt;" WaitForReady="INTERACTIVE">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cdbef50f-21b1-4f66-b835-992db4f7faca" InformativeScreenshot="61029f4643fbbe109371557a43b5390f" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Log Off' idx='*' /&gt;&lt;wnd ctrlid='101' /&gt;" WaitForReady="INTERACTIVE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -207,19 +228,16 @@
         </If.Then>
       </If>
     </Sequence>
-    <Sequence DisplayName="SAP Bussiness Client Window" sap:VirtualizedContainerService.HintSize="554,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <Sequence DisplayName="SAP Bussiness Client Window" sap:VirtualizedContainerService.HintSize="554,769" sap2010:WorkflowViewState.IdRef="Sequence_11">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:UiElementExists DisplayName="Element Exists 'text Do'" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="db594e01-1b41-43df-8d14-699198353acc" InformativeScreenshot="4d12214de7806162c98f52329e35c6d1" Selector="&lt;wnd aaname='SAP Business Client Information: Do you want to exit?' app='nwbc.exe' cls='HwndWrapper*' title='SAP Business Client' /&gt;">
-            <ui:Target.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:Target.TimeoutMS>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="db594e01-1b41-43df-8d14-699198353acc" InformativeScreenshot="4d12214de7806162c98f52329e35c6d1" Selector="&lt;wnd aaname='SAP Business Client Information: Do you want to exit?' app='nwbc.exe' cls='HwndWrapper*' title='SAP Business Client' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_1second&quot;).ToString)]">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
@@ -290,7 +308,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:UiElementExists DisplayName="Element Exists - SAP NetWeaver LogOff Button" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="512,86" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="46ad797d-5a67-48f5-b563-bb4ea51782dc" Selector="&lt;html app='chrome.exe' title='*SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='Log off' tag='SPAN' /&gt;" TimeoutMS="3000">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="46ad797d-5a67-48f5-b563-bb4ea51782dc" Selector="&lt;html app='chrome.exe' title='*SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='Log off' tag='SPAN' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_1second&quot;).ToString)]">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
@@ -382,10 +400,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:UiElementExists DisplayName="Element Exists 'push button  Log On'" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f4020e52-5b80-4007-a400-e59ea149f3f5" InformativeScreenshot="48528e7df97797459353756a10ff7fec" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='SAP Logon 760' /&gt;&lt;wnd ctrlid='1068' title='&amp;amp;Log On' /&gt;&lt;ctrl name='Log On' role='push button' /&gt;">
-            <ui:Target.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:Target.TimeoutMS>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f4020e52-5b80-4007-a400-e59ea149f3f5" InformativeScreenshot="48528e7df97797459353756a10ff7fec" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='SAP Logon 760' /&gt;&lt;wnd ctrlid='1068' title='&amp;amp;Log On' /&gt;&lt;ctrl name='Log On' role='push button' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_1second&quot;).ToString)]">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>

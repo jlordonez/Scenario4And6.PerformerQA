@@ -252,7 +252,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'F3'" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="f3" KeyModifiers="None" SpecialKey="True">
         <ui:SendHotkey.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c85bc188-9a13-4c2b-8529-dd0e293d8b8a" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' idx='*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change Sales Order: Initial Screen' /&gt;&lt;sap id='mbar' /&gt;" TimeoutMS="1000">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c85bc188-9a13-4c2b-8529-dd0e293d8b8a" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' idx='*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change *: Initial Screen' /&gt;&lt;sap idx='3' /&gt;" TimeoutMS="1000">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>

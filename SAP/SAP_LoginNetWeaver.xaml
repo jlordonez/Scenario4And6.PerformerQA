@@ -87,7 +87,7 @@
       <AssemblyReference>System.Data.Entity</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: Login Netweaver and Open SAP Client&#xA;Pre Condition: SAP Netweaver Landing screen&#xA;Post Condition: SAP Client Landing Screen" DisplayName="SAP_LoginNetWeaver" sap:VirtualizedContainerService.HintSize="1117,4092" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: Login Netweaver and Open SAP Client&#xA;Pre Condition: SAP Netweaver Landing screen&#xA;Post Condition: SAP Client Landing Screen" DisplayName="SAP_LoginNetWeaver" sap:VirtualizedContainerService.HintSize="1117,5148" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Username" />
       <Variable x:TypeArguments="ss:SecureString" Name="Password" />
@@ -548,10 +548,10 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Excecute txFile" sap:VirtualizedContainerService.HintSize="1075,66" sap2010:WorkflowViewState.IdRef="Sequence_16">
+    <Sequence DisplayName="Excecute txFile" sap:VirtualizedContainerService.HintSize="1075,445" sap2010:WorkflowViewState.IdRef="Sequence_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -580,10 +580,10 @@
         </ui:RetryScope.Condition>
       </ui:RetryScope>
     </Sequence>
-    <Sequence DisplayName="Validate SAP GUI security" sap:VirtualizedContainerService.HintSize="1075,66" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence DisplayName="Validate SAP GUI security" sap:VirtualizedContainerService.HintSize="1075,324" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -620,16 +620,16 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:Click>
     </Sequence>
-    <Sequence DisplayName="Validate SAP Landing Screen" sap:VirtualizedContainerService.HintSize="1075,66" sap2010:WorkflowViewState.IdRef="Sequence_18">
+    <Sequence DisplayName="Validate SAP Landing Screen" sap:VirtualizedContainerService.HintSize="1075,485" sap2010:WorkflowViewState.IdRef="Sequence_18">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:UiElementExists DisplayName="Element Exists - SAP Landing Screen" Exists="[LandingScreenExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a48af930-98b1-4cf6-9913-361da7325832" InformativeScreenshot="8f75412598c506eb747fe94e4868277f" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access  -  *' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a48af930-98b1-4cf6-9913-361da7325832" InformativeScreenshot="8f75412598c506eb747fe94e4868277f" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' title='SAP Easy Access  -  *' /&gt;&lt;ctrl role='client' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
         </ui:UiElementExists.Target>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
