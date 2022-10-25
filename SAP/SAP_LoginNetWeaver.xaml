@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1107,4157</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1107,5213</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_LoginNetWeaver_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -85,6 +85,8 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Description: Login Netweaver and Open SAP Client&#xA;Pre Condition: SAP Netweaver Landing screen&#xA;Post Condition: SAP Client Landing Screen" DisplayName="SAP_LoginNetWeaver" sap:VirtualizedContainerService.HintSize="1117,5148" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -317,7 +319,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Element Exists 'Log Off'" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be6d29bb-9555-46e7-96b6-59279bbda150" InformativeScreenshot="979c8e856150670d523858b0dcf373d2" Selector="&lt;html app='chrome.exe' htmlwindowname='WID16*' title='* - SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='Log off' tag='SPAN' /&gt;" TimeoutMS="10000">
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be6d29bb-9555-46e7-96b6-59279bbda150" InformativeScreenshot="979c8e856150670d523858b0dcf373d2" Selector="&lt;html app='chrome.exe' htmlwindowname='WID16*' title='* - SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='Log off' tag='SPAN' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]">
               <ui:Target.WaitForReady>
                 <InArgument x:TypeArguments="ui:WaitForReady" />
               </ui:Target.WaitForReady>
@@ -355,7 +357,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Element Exists 'Autentication Failed'" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_10">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="90da245c-1d10-4534-bb41-ccf42ef14aa2" InformativeScreenshot="d96b2411f4eee83cef26780030c04834" Selector="&lt;html app='chrome.exe' htmlwindowname='logonAppPage' title='SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='User authentication failed ' tag='SPAN' /&gt;" TimeoutMS="10000">
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="90da245c-1d10-4534-bb41-ccf42ef14aa2" InformativeScreenshot="d96b2411f4eee83cef26780030c04834" Selector="&lt;html app='chrome.exe' htmlwindowname='logonAppPage' title='SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='User authentication failed ' tag='SPAN' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]">
               <ui:Target.WaitForReady>
                 <InArgument x:TypeArguments="ui:WaitForReady" />
               </ui:Target.WaitForReady>
@@ -410,11 +412,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:UiElementExists DisplayName="Element Exists Core SAP" Exists="[ProdSystem]" sap:VirtualizedContainerService.HintSize="1033,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="122e0751-7fee-4a57-b881-b5d8c689e6f9" InformativeScreenshot="b2d0ae771164fd0fb1629770ae14c2d2" Selector="&lt;html app='chrome.exe' title='*SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='ECC*' tag='A' /&gt;" WaitForReady="NONE">
-            <ui:Target.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:Target.TimeoutMS>
-          </ui:Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="122e0751-7fee-4a57-b881-b5d8c689e6f9" InformativeScreenshot="b2d0ae771164fd0fb1629770ae14c2d2" Selector="&lt;html app='chrome.exe' title='*SAP NetWeaver Portal' /&gt;&lt;webctrl aaname='ECC*' tag='A' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]" WaitForReady="NONE" />
         </ui:UiElementExists.Target>
       </ui:UiElementExists>
       <If Condition="[ProdSystem]" DisplayName="Check Is Prod System?" sap:VirtualizedContainerService.HintSize="1033,1168" sap2010:WorkflowViewState.IdRef="If_4">
