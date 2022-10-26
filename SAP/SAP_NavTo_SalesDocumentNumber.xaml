@@ -81,6 +81,7 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="SAP_NavTo_SalesDocumentNumber" sap:VirtualizedContainerService.HintSize="1032,1634" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -166,7 +167,7 @@
                     <av:PointCollection x:Key="ConnectorLocation">310,333 310,356.5 313.5,356.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Type Sales Document Number" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_136">
+                <Sequence DisplayName="Type Sales Document Number" sap:VirtualizedContainerService.HintSize="376,518" sap2010:WorkflowViewState.IdRef="Sequence_136">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -203,7 +204,7 @@
                   </ui:Click>
                   <ui:UiElementExists DisplayName="Element Exists 'AFS Item overview' Tab" Exists="[bool_ElementExists]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_43">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b4b6e511-f5fd-4fd8-ae20-5d59750e7a1d" InformativeScreenshot="752a1590b191c9f7101fd705e162b206" Selector="&lt;wnd cls='SAP_FRONTEND_EMBEDDED' /&gt;&lt;sap text='AFS Item overview' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_1second&quot;).ToString)]">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b4b6e511-f5fd-4fd8-ae20-5d59750e7a1d" InformativeScreenshot="752a1590b191c9f7101fd705e162b206" Selector="&lt;wnd cls='SAP_FRONTEND_EMBEDDED' /&gt;&lt;sap text='AFS Item overview' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]">
                         <ui:Target.WaitForReady>
                           <InArgument x:TypeArguments="ui:WaitForReady" />
                         </ui:Target.WaitForReady>
@@ -249,7 +250,7 @@
                             <av:PointCollection x:Key="ConnectorLocation">550,367 550,343.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Validate SD Document is being processed" sap:VirtualizedContainerService.HintSize="376,460" sap2010:WorkflowViewState.IdRef="Sequence_138">
+                        <Sequence DisplayName="Validate SD Document is being processed" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_138">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
