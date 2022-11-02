@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2107,4691</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2107,4811</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_CheckItemAvailability_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="70">
@@ -92,7 +92,7 @@
       <AssemblyReference>Microsoft.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_CheckItemAvailability" sap:VirtualizedContainerService.HintSize="2117,4586" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_CheckItemAvailability" sap:VirtualizedContainerService.HintSize="2117,4626" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="elementExist" />
       <Variable x:TypeArguments="x:String" Name="getMessage" />
@@ -202,15 +202,15 @@ dt_Afs_items.AsEnumerable.Any(Function(DataRow) DataRow("Short Text").ToString.T
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Validate if Transaction Item Contains J0 on SAP" sap:VirtualizedContainerService.HintSize="2075,2902" sap2010:WorkflowViewState.IdRef="Sequence_63">
+    <Sequence DisplayName="Validate if Transaction Item Contains J0 on SAP" sap:VirtualizedContainerService.HintSize="2075,2942" sap2010:WorkflowViewState.IdRef="Sequence_63">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[dt_Afs_items.AsEnumerable.Any(Function(DataRow) DataRow(&quot;RejectionReason&quot;).ToString.Trim.ToUpper.Equals(in_TransactionItem.SpecificContent(&quot;RejectionReasonSchLnID&quot;).ToString.Trim.ToUpper))]" DisplayName="Validate if J0 Exists on SAP" sap:VirtualizedContainerService.HintSize="2033,2810" sap2010:WorkflowViewState.IdRef="If_12">
+      <If Condition="[dt_Afs_items.AsEnumerable.Any(Function(DataRow) DataRow(&quot;RejectionReason&quot;).ToString.Trim.ToUpper.Equals(in_TransactionItem.SpecificContent(&quot;RejectionReasonSchLnID&quot;).ToString.Trim.ToUpper))]" DisplayName="Validate if J0 Exists on SAP" sap:VirtualizedContainerService.HintSize="2033,2850" sap2010:WorkflowViewState.IdRef="If_12">
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="1612,2652" sap2010:WorkflowViewState.IdRef="Sequence_61">
+          <Sequence sap:VirtualizedContainerService.HintSize="1612,2692" sap2010:WorkflowViewState.IdRef="Sequence_61">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -228,7 +228,7 @@ d("RejectionReason").ToString.Trim.Equals(in_TransactionItem.SpecificContent("Re
 Select d("Index")).ToList]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[IndexList.Count &gt; 0]" DisplayName="Validate if the IndexList Contains the Row Item" sap:VirtualizedContainerService.HintSize="1570,2325" sap2010:WorkflowViewState.IdRef="If_10">
+            <If Condition="[IndexList.Count &gt; 0]" DisplayName="Validate if the IndexList Contains the Row Item" sap:VirtualizedContainerService.HintSize="1570,2365" sap2010:WorkflowViewState.IdRef="If_10">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -236,7 +236,7 @@ Select d("Index")).ToList]</InArgument>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="1534,2138" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                <Sequence sap:VirtualizedContainerService.HintSize="1534,2178" sap2010:WorkflowViewState.IdRef="Sequence_54">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -250,7 +250,7 @@ Select d("Index")).ToList]</InArgument>
                       <InArgument x:TypeArguments="x:String">[IndexList(0).ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'SAP Logon'" sap:VirtualizedContainerService.HintSize="1492,906" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="fa73006c1e34c4cd1088efa86c26b2c9" Selector="&lt;wnd app='*.exe' title='Change RL *' /&gt;">
+                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'SAP Logon'" sap:VirtualizedContainerService.HintSize="1492,946" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="fa73006c1e34c4cd1088efa86c26b2c9" Selector="&lt;wnd app='*.exe' title='Change RL *' /&gt;">
                     <ui:WindowScope.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
@@ -262,7 +262,7 @@ Select d("Index")).ToList]</InArgument>
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'TableRow'" sap:VirtualizedContainerService.HintSize="418,86" sap2010:WorkflowViewState.IdRef="Check_3">
+                          <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check Row Item Desired" sap:VirtualizedContainerService.HintSize="418,86" sap2010:WorkflowViewState.IdRef="Check_3">
                             <ui:Check.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8d20ef21-ebde-4ce3-9353-c36c0bcdb230" Selector="[String.Format(&quot;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' /&gt;&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\02/ssubSUBSCREEN_BODY:SAPLJ3AD:2930/ssubSUBITEM_L2:SAPMJ3AS:2001/tblSAPMJ3ASTCTRL_LINE_ENTRY' tableRow='{0}' /&gt;&quot;, Index)]">
                                 <ui:Target.TimeoutMS>
@@ -325,7 +325,7 @@ Select d("Index")).ToList]</InArgument>
                             </ui:RetryScope.ActivityBody>
                             <ui:RetryScope.Condition>
                               <ActivityFunc x:TypeArguments="x:Boolean">
-                                <p:IsTrue DisplayName="Is true" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="IsTrue_2" Input="[if(getRejectionReason.ToString.Trim.Equals(&quot;J0&quot;), True, False)]" />
+                                <p:IsTrue DisplayName="Validae if J0 Rejection was performed" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="IsTrue_2" Input="[if(getRejectionReason.ToString.Trim.ToUpper.Equals(&quot;J0&quot;), True, False)]" />
                               </ActivityFunc>
                             </ui:RetryScope.Condition>
                           </ui:RetryScope>
