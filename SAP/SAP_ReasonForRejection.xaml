@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1006.4,3112.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1006.4,3076.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_ReasonForRejection_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="76">
@@ -97,7 +97,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_ReasonForRejection" sap:VirtualizedContainerService.HintSize="977.6,3008" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence DisplayName="SAP_ReasonForRejection" sap:VirtualizedContainerService.HintSize="977.6,3012" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="elementExist" />
       <Variable x:TypeArguments="x:Boolean" Name="bool_MaterialExists" />
@@ -163,7 +163,7 @@ dt_Afs_items.AsEnumerable.Any(Function(DataRow) DataRow("Grid Value").ToString.T
         </If.Else>
       </If>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;1. Validate if Schedule Line ID Exists on SAP.&#xA;2. Validate if Rejection Reason Sch Ln ID exists on SAP." DisplayName="Validate if Schedule LIne ID and Rejectio Reason Sch Ln ID exist on SAP" sap:VirtualizedContainerService.HintSize="936,705.6" sap2010:WorkflowViewState.IdRef="Sequence_31">
+    <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;1. Validate if Schedule Line ID Exists on SAP.&#xA;2. Validate if Rejection Reason Sch Ln ID exists on SAP." DisplayName="Validate if Schedule LIne ID and Rejectio Reason Sch Ln ID exist on SAP" sap:VirtualizedContainerService.HintSize="936,709.6" sap2010:WorkflowViewState.IdRef="Sequence_31">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -180,7 +180,7 @@ dt_Afs_items.AsEnumerable.Any(Function(DataRow) DataRow("Grid Value").ToString.T
 dt_Afs_items.AsEnumerable.Any(Function(DataRow) DataRow("RejectionReason").ToString.Trim.ToUpper.Equals(in_TransactionItem.SpecificContent("RejectionReasonSchLnID").ToString.Trim.ToUpper))]</InArgument>
         </Assign.Value>
       </Assign>
-      <If Condition="[bool_TransactionItemExists]" DisplayName="Validate if Transaction Item Exists on SAP" sap:VirtualizedContainerService.HintSize="794.4,448.8" sap2010:WorkflowViewState.IdRef="If_7">
+      <If Condition="[bool_TransactionItemExists]" DisplayName="Validate if Transaction Item Exists on SAP" sap:VirtualizedContainerService.HintSize="794.4,452.8" sap2010:WorkflowViewState.IdRef="If_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
