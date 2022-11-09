@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1022,1701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1022,1699</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_NavTo_SalesDocumentNumber_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="68">
@@ -84,7 +84,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_NavTo_SalesDocumentNumber" sap:VirtualizedContainerService.HintSize="1032,1636" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_NavTo_SalesDocumentNumber" sap:VirtualizedContainerService.HintSize="1032,1634" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TransactionItem" />
       <Variable x:TypeArguments="x:String" Name="getDocNumberMsg" />
@@ -210,7 +210,7 @@
                   </ui:Click>
                   <ui:UiElementExists DisplayName="Element Exists 'AFS Item overview' Tab" Exists="[bool_ElementExists]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_43">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b4b6e511-f5fd-4fd8-ae20-5d59750e7a1d" InformativeScreenshot="752a1590b191c9f7101fd705e162b206" Selector="&lt;wnd cls='SAP_FRONTEND_EMBEDDED' /&gt;&lt;sap text='AFS Item overview' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_5second&quot;).ToString)]">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b4b6e511-f5fd-4fd8-ae20-5d59750e7a1d" InformativeScreenshot="752a1590b191c9f7101fd705e162b206" Selector="&lt;wnd cls='SAP_FRONTEND_EMBEDDED' /&gt;&lt;sap text='AFS Item overview' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_2second&quot;).ToString)]">
                         <ui:Target.WaitForReady>
                           <InArgument x:TypeArguments="ui:WaitForReady" />
                         </ui:Target.WaitForReady>
@@ -308,24 +308,24 @@
                                     <av:Size x:Key="ShapeSize">200,66</av:Size>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Validate Status of Transaction" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_146">
+                                <Sequence DisplayName="Validate Status of Transaction" sap:VirtualizedContainerService.HintSize="1534,926" sap2010:WorkflowViewState.IdRef="Sequence_146">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Pick sap:VirtualizedContainerService.HintSize="814,97" sap2010:WorkflowViewState.IdRef="Pick_1">
-                                    <PickBranch DisplayName="PickBranch - Validate Consider Subsequent Document" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+                                  <Pick sap:VirtualizedContainerService.HintSize="1492,834" sap2010:WorkflowViewState.IdRef="Pick_1">
+                                    <PickBranch DisplayName="PickBranch - Validate Consider Subsequent Document" sap:VirtualizedContainerService.HintSize="384,788" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <PickBranch.Trigger>
-                                        <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'Continue (Enter)'" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="UiElementExists_45">
+                                        <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'Continue (Enter)'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_45">
                                           <ui:UiElementExists.Target>
-                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c021ae8d-0940-46e5-9606-523942536f45" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Information' idx='*' /&gt;&lt;sap id='tbar[0]/btn[0]' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]">
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c021ae8d-0940-46e5-9606-523942536f45" InformativeScreenshot="f18b4269c7a0541dd1c93225c8a718be" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Information' idx='*' /&gt;&lt;sap id='usr' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_1second&quot;).ToString)]">
                                               <ui:Target.WaitForReady>
                                                 <InArgument x:TypeArguments="ui:WaitForReady" />
                                               </ui:Target.WaitForReady>
@@ -353,17 +353,17 @@
                                         </ui:Click.Target>
                                       </ui:Click>
                                     </PickBranch>
-                                    <PickBranch DisplayName="PickBranch - Validate Status of SD Document on SAP" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+                                    <PickBranch DisplayName="PickBranch - Validate Status of SD Document on SAP" sap:VirtualizedContainerService.HintSize="468,788" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <PickBranch.Trigger>
                                         <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'Validate Status of SD Document on SAP'" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="UiElementExists_46">
                                           <ui:UiElementExists.Target>
-                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8e4172b8-de2b-4801-853b-26f5758ee049" Selector="&lt;wnd cls='SAP_FRONTEND_EMBEDDED' /&gt;&lt;sap id='sbar/pane[0]' text='* document *' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]">
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8e4172b8-de2b-4801-853b-26f5758ee049" Selector="&lt;wnd cls='SAP_FRONTEND_EMBEDDED' /&gt;&lt;sap id='sbar/pane[0]' text='* document *' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_1second&quot;).ToString)]">
                                               <ui:Target.WaitForReady>
                                                 <InArgument x:TypeArguments="ui:WaitForReady" />
                                               </ui:Target.WaitForReady>
@@ -410,17 +410,17 @@
                                         <Throw DisplayName="Throw  BRE - SD Document Failed" Exception="[new BusinessRuleException(getDocNumberMsg.ToString)]" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="Throw_26" />
                                       </Sequence>
                                     </PickBranch>
-                                    <PickBranch DisplayName="PickBranch - Validate Exit Button (Document Processing Blocked)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="PickBranch_3">
+                                    <PickBranch DisplayName="PickBranch - Validate Exit Button (Document Processing Blocked)" sap:VirtualizedContainerService.HintSize="426,788" sap2010:WorkflowViewState.IdRef="PickBranch_3">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <PickBranch.Trigger>
                                         <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'Button  Exit'" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="UiElementExists_47">
                                           <ui:UiElementExists.Target>
-                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8b858686-3803-4408-b1d5-354226ae5557" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Cancel' /&gt;&lt;sap id='tbar[0]/btn[0]' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_3second&quot;).ToString)]">
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8b858686-3803-4408-b1d5-354226ae5557" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Cancel' /&gt;&lt;sap id='tbar[0]/btn[0]' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_1second&quot;).ToString)]">
                                               <ui:Target.WaitForReady>
                                                 <InArgument x:TypeArguments="ui:WaitForReady" />
                                               </ui:Target.WaitForReady>
@@ -516,6 +516,6 @@
         </ActivityAction>
       </ui:WindowScope.Body>
     </ui:WindowScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="988.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;End SAP_NavTo_SalesDocumentNumber&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="990,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;End SAP_NavTo_SalesDocumentNumber&quot;]" />
   </Sequence>
 </Activity>
