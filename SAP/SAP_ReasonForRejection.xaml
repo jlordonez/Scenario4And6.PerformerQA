@@ -323,7 +323,7 @@ Select d("Index")).ToList]</InArgument>
                 <PickBranch.Trigger>
                   <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'Rejection Reason'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8191b298-1e40-4dd3-9d57-463052df6446" InformativeScreenshot="d7f52117caaf36dbb87ae2a28cb68ee6" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Fast change of Change RL *' /&gt;&lt;sap text='Rej.reason' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_2second&quot;).ToString)]">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8191b298-1e40-4dd3-9d57-463052df6446" InformativeScreenshot="d7f52117caaf36dbb87ae2a28cb68ee6" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Fast change of Change RL *' idx='*' /&gt;&lt;sap id='usr/subSUBHEADER:SAPMJ3AS:7000/tabsTABSTR_FAST_CHANGE/tabpSERL' /&gt;" TimeoutMS="[Cint(in_Config(&quot;TimeOut_2second&quot;).ToString)]">
                         <ui:Target.WaitForReady>
                           <InArgument x:TypeArguments="ui:WaitForReady" />
                         </ui:Target.WaitForReady>
@@ -338,7 +338,7 @@ Select d("Index")).ToList]</InArgument>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Fast Change Windows'" sap:VirtualizedContainerService.HintSize="434,664" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="c08a9f7bbb681516f781f3af6041ccbb" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Fast change of Change RL*' /&gt;">
+                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Fast Change Windows'" sap:VirtualizedContainerService.HintSize="434,664" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="c08a9f7bbb681516f781f3af6041ccbb" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Fast change of Change RL *' idx='*' /&gt;">
                     <ui:WindowScope.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
@@ -362,7 +362,7 @@ Select d("Index")).ToList]</InArgument>
                               </ui:CursorPosition>
                             </ui:Click.CursorPosition>
                             <ui:Click.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8b22a29-16f8-4f69-80cb-ca60e6b743f6" InformativeScreenshot="19ad91273d8370779f774d1ed651bab6" Selector="&lt;sap text='Rej.reason' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8b22a29-16f8-4f69-80cb-ca60e6b743f6" InformativeScreenshot="19ad91273d8370779f774d1ed651bab6" Selector="&lt;sap id='usr/subSUBHEADER:SAPMJ3AS:7000/tabsTABSTR_FAST_CHANGE/tabpSERL' /&gt;">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
@@ -372,7 +372,7 @@ Select d("Index")).ToList]</InArgument>
                               </ui:Target>
                             </ui:Click.Target>
                           </ui:Click>
-                          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'A6'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SimulateType="True" Text="[in_Config(&quot;sapReasonForRejectionType&quot;).ToString.Trim]">
+                          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'A6'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SimulateType="True" Text="[in_Config(&quot;sapReasonForRejectionType&quot;).ToString]">
                             <ui:TypeInto.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c0f9111e-3704-4314-b05a-baee00288303" InformativeScreenshot="be330161a6e05318e677a03f23d4b497" Selector="&lt;sap id='usr/subSUBHEADER:SAPMJ3AS:7000/tabsTABSTR_FAST_CHANGE/tabpSERL/ssubSUB_FAST_CHANGE:SAPMJ3AS:7080/ctxtJ_3ASZDID-ABGRU' /&gt;">
                                 <ui:Target.TimeoutMS>
