@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1006,859</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1006,1412</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_NavToHome_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -87,7 +87,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_NavToHome" sap:VirtualizedContainerService.HintSize="418,790" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_NavToHome" sap:VirtualizedContainerService.HintSize="568,1347" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="elementExists" />
       <Variable x:TypeArguments="x:String" Name="getMessage" />
@@ -97,8 +97,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start SAP_NavToHome&quot;]" />
-    <Sequence DisplayName="Validate if Save button appear" sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start SAP_NavToHome&quot;]" />
+    <Sequence DisplayName="Validate if Save button appear" sap:VirtualizedContainerService.HintSize="526,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -173,16 +173,16 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Validate if &quot;Save Incomplete Message&quot; appear" sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
+    <Sequence DisplayName="Validate if &quot;Save Incomplete Message&quot; appear" sap:VirtualizedContainerService.HintSize="526,623" sap2010:WorkflowViewState.IdRef="Sequence_19">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:UiElementExists DisplayName="Element Exists 'Save' button" Exists="[elementExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8baf2ea-b579-483e-9f75-1a09cf56ae49" InformativeScreenshot="c3801a1439a4b4da89b9294f45b0d9c1" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Save Incomplete Document' /&gt;&lt;sap id='usr/btnSPOP-varoption1' /&gt;" TimeoutMS="5000">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8baf2ea-b579-483e-9f75-1a09cf56ae49" InformativeScreenshot="c3801a1439a4b4da89b9294f45b0d9c1" Selector="&lt;wnd app='sapguiserver.exe' cls='#32770' title='Save Incomplete Document' idx='*' /&gt;&lt;ctrl name='Save Incomplete Document' role='dialog' /&gt;" TimeoutMS="5000">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
@@ -209,7 +209,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e462fe76-fbf6-4062-b5b0-f9ed4e22c954" InformativeScreenshot="4a3bb12dc5c655f26aacf15f9e068853" Selector="&lt;wnd app='sap*.exe' cls='#32770' title='Save Incomplete Document' /&gt;&lt;sap id='usr/btnSPOP-varoption1' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e462fe76-fbf6-4062-b5b0-f9ed4e22c954" InformativeScreenshot="4a3bb12dc5c655f26aacf15f9e068853" Selector="&lt;wnd app='sapguiserver.exe' cls='#32770' title='Save Incomplete Document' idx='*' /&gt;&lt;sap id='usr/btnSPOP-VAROPTION1' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -232,7 +232,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Select Back (F3)" sap:VirtualizedContainerService.HintSize="376,224" sap2010:WorkflowViewState.IdRef="Sequence_12">
+    <Sequence DisplayName="Select Back (F3)" sap:VirtualizedContainerService.HintSize="526,224" sap2010:WorkflowViewState.IdRef="Sequence_12">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -252,6 +252,6 @@
         </ui:SendHotkey.Target>
       </ui:SendHotkey>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;End SAP_NavToHome&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;End SAP_NavToHome&quot;]" />
   </Sequence>
 </Activity>
