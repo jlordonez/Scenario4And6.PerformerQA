@@ -372,9 +372,9 @@ Select d("Index")).ToList]</InArgument>
                               </ui:Target>
                             </ui:Click.Target>
                           </ui:Click>
-                          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'A6'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[in_Config(&quot;sapReasonForRejectionType&quot;).ToString.Trim]">
+                          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'A6'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SimulateType="True" Text="[in_Config(&quot;sapReasonForRejectionType&quot;).ToString.Trim]">
                             <ui:TypeInto.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44e81732-8912-466e-a96b-3a4a9cc773ef" InformativeScreenshot="3f699d9b67526a807fa9f22b09e3465a" Selector="&lt;sap tooltip='Reason for rejection of quotations and sales orders' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c0f9111e-3704-4314-b05a-baee00288303" InformativeScreenshot="be330161a6e05318e677a03f23d4b497" Selector="&lt;sap id='usr/subSUBHEADER:SAPMJ3AS:7000/tabsTABSTR_FAST_CHANGE/tabpSERL/ssubSUB_FAST_CHANGE:SAPMJ3AS:7080/ctxtJ_3ASZDID-ABGRU' /&gt;">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
@@ -384,7 +384,7 @@ Select d("Index")).ToList]</InArgument>
                               </ui:Target>
                             </ui:TypeInto.Target>
                           </ui:TypeInto>
-                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Change date (F6)'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Change date (F6)'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                             <ui:Click.CursorPosition>
                               <ui:CursorPosition Position="Center">
                                 <ui:CursorPosition.OffsetX>
@@ -396,7 +396,7 @@ Select d("Index")).ToList]</InArgument>
                               </ui:CursorPosition>
                             </ui:Click.CursorPosition>
                             <ui:Click.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="724a7bdd-0edc-4163-9379-da33e9b6dd15" InformativeScreenshot="07b33c086432d03319a96a3060e9fe7d" Selector="&lt;sap id='tbar[0]/btn[6]' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a28ae45b-d27c-46fe-83c5-6b72ad66b1d1" InformativeScreenshot="d3d949456e57871160d721f989e8891d" Selector="&lt;sap id='tbar[0]/btn[6]' /&gt;">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
