@@ -6,6 +6,7 @@
     <x:Property Name="NotificationsDt" Type="InArgument(sd:DataTable)" />
     <x:Property Name="in_FinalReportFolder" Type="InArgument(x:String)" />
     <x:Property Name="in_FinalReportFileName" Type="InArgument(x:String)" />
+    <x:Property Name="in_FinalReportSheetName" Type="InArgument(x:String)" />
   </x:Members>
   <this:Misc_FilterFinalReport.in_FinalReportFolder>
     <InArgument x:TypeArguments="x:String" />
@@ -16,7 +17,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1068,1322</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1006,1260</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Misc_FilterFinalReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -89,7 +90,6 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
@@ -98,9 +98,9 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Misc_FinalReport" sap:VirtualizedContainerService.HintSize="839,1257" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Misc_FinalReport" sap:VirtualizedContainerService.HintSize="839,1195" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="FolderExists" />
+      <Variable x:TypeArguments="x:Boolean" Name="bool_folderExists" />
       <Variable x:TypeArguments="s:String[]" Name="Attachments" />
       <Variable x:TypeArguments="x:String" Name="totalRowItems" />
     </Sequence.Variables>
@@ -111,70 +111,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Trace" Message="[&quot;Start Final Report&quot;]" />
-    <Sequence DisplayName="Validate if Final Report Folder Exist" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="Sequence_96">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:FolderExistsX DisplayName="Folder Exists" Exists="[FolderExists]" sap:VirtualizedContainerService.HintSize="797,132" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[in_FinalReportFolder]" />
-      <If Condition="[FolderExists]" DisplayName="Validate if Folder Exists" sap:VirtualizedContainerService.HintSize="797,341" sap2010:WorkflowViewState.IdRef="If_38">
-        <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_97">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[&quot;Final Report Folder Exists&quot;]" />
-          </Sequence>
-        </If.Then>
-        <If.Else>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,171" sap2010:WorkflowViewState.IdRef="Sequence_98">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[in_FinalReportFolder]" />
-          </Sequence>
-        </If.Else>
-      </If>
-    </Sequence>
-    <Sequence DisplayName="Validate if Final Report File Exists" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="Sequence_102">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="x:Boolean" Name="FileFinalReportExists" />
-      </Sequence.Variables>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:FileExistsX DisplayName="File Exists - FinalReportFileName exists" Exists="[FileFinalReportExists]" sap:VirtualizedContainerService.HintSize="512,132" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path="[in_FinalReportFolder + &quot;\&quot; + in_FinalReportFileName]" />
-      <If Condition="[FileFinalReportExists]" DisplayName="Validate if FileFinalReport exists" sap:VirtualizedContainerService.HintSize="512,358" sap2010:WorkflowViewState.IdRef="If_41">
-        <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="476,171" sap2010:WorkflowViewState.IdRef="Sequence_103">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_FinalReportFolder + &quot;\&quot; + in_FinalReportFileName]" />
-          </Sequence>
-        </If.Then>
-        <If.Else>
-          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_104">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-        </If.Else>
-      </If>
-    </Sequence>
+    <Delay DisplayName="Delay 1s" Duration="[TimeSpan.FromMilliseconds(1000)]" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
     <If Condition="[IsNothing(in_CompleteFinalReportDt)]" DisplayName="Validate if in_CompleteFinalReportDt is Nothing" sap:VirtualizedContainerService.HintSize="797,779" sap2010:WorkflowViewState.IdRef="If_37">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -199,7 +136,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:WriteRange AddHeaders="True" DataTable="[in_CompleteFinalReportDt]" DisplayName="Write Range - ResultFileRegion" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_7" SheetName="J0's Final Report" StartingCell="A1" WorkbookPath="[in_FinalReportFolder + &quot;\&quot; + in_FinalReportFileName]" />
+          <ui:WriteRange AddHeaders="True" DataTable="[in_CompleteFinalReportDt]" DisplayName="Write Range - ResultFileRegion" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_7" SheetName="[in_FinalReportSheetName]" StartingCell="A1" WorkbookPath="[in_FinalReportFolder + &quot;\&quot; + in_FinalReportFileName]" />
           <Assign DisplayName="Assign - Total Row Items" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_51">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[totalRowItems]</OutArgument>
@@ -216,28 +153,16 @@
               <InArgument x:TypeArguments="s:String[]">[{in_FinalReportFolder + "\" + in_FinalReportFileName}]</InArgument>
             </Assign.Value>
           </Assign>
-          <Delay DisplayName="Delay 2S" Duration="[TimeSpan.FromMilliseconds(2000)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+          <Delay DisplayName="Delay 5S" Duration="[TimeSpan.FromMilliseconds(5000)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendNotificationResults workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Email\SendNotificationResults.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="s:String[]" x:Key="BodyValues">
-                <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{in_Config(&quot;logF_BusinessProcessName&quot;).ToString}" />
-              </InArgument>
-              <InArgument x:TypeArguments="s:String[]" x:Key="SubjectValues">
-                <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{totalRowItems}" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="NotificationID">
-                <Literal x:TypeArguments="x:String">SendResults</Literal>
-              </InArgument>
-              <InArgument x:TypeArguments="s:String[]" x:Key="Attachments">
-                <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="Attachments" />
-              </InArgument>
+              <InArgument x:TypeArguments="s:String[]" x:Key="BodyValues">[{in_Config("logF_BusinessProcessName").ToString}]</InArgument>
+              <InArgument x:TypeArguments="s:String[]" x:Key="SubjectValues">[{totalRowItems}]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="NotificationID">SendResults</InArgument>
+              <InArgument x:TypeArguments="s:String[]" x:Key="Attachments">[Attachments]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="ToAddress" />
-              <InArgument x:TypeArguments="sd:DataTable" x:Key="NotificationsDt">
-                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="NotificationsDt" />
-              </InArgument>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-              </InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="NotificationsDt">[NotificationsDt]</InArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
