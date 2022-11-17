@@ -8,10 +8,13 @@
   <this:CreateFoldersRegions.in_FinalReportFolder>
     <InArgument x:TypeArguments="x:String" />
   </this:CreateFoldersRegions.in_FinalReportFolder>
+  <this:CreateFoldersRegions.in_FinalReportFileName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:CreateFoldersRegions.in_FinalReportFileName>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1006,1712</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1139,2452</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CreateFoldersRegions_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -50,7 +53,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -82,10 +85,13 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CreateFoldersRegions" sap:VirtualizedContainerService.HintSize="957,1647" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CreateFoldersRegions" sap:VirtualizedContainerService.HintSize="1149,2387" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CurrentDirectory" />
     </Sequence.Variables>
@@ -94,8 +100,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="915,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Start Create and Clean Folder&quot;]" />
-    <Sequence DisplayName="Validate if Final Report Folder Exist" sap:VirtualizedContainerService.HintSize="915,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1107,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Start Create and Clean Folder&quot;]" />
+    <Sequence DisplayName="Validate if Final Report Folder Exist" sap:VirtualizedContainerService.HintSize="1107,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="bool_folderExists" />
       </Sequence.Variables>
@@ -129,7 +135,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Validate if Final Report File Exists" sap:VirtualizedContainerService.HintSize="915,66" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence DisplayName="Validate if Final Report File Exists" sap:VirtualizedContainerService.HintSize="1107,66" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="bool_fileFinalReportExists" />
       </Sequence.Variables>
@@ -162,7 +168,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <Assign DisplayName="Assign - FinalReportRegionsFolder" sap:VirtualizedContainerService.HintSize="915,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign - FinalReportRegionsFolder" sap:VirtualizedContainerService.HintSize="1107,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[CurrentDirectory]</OutArgument>
       </Assign.To>
@@ -170,13 +176,13 @@
         <InArgument x:TypeArguments="x:String">[in_Config("FinalReportRegionsFolder").ToString + "\"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_RegionsDt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="915,981" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_RegionsDt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1107,1721" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="881,866" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1073,1606" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="FolderExists" />
               <Variable x:TypeArguments="x:Boolean" Name="FileExists" />
@@ -186,15 +192,15 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Validate if Folder for everyone of the regions exist" sap:VirtualizedContainerService.HintSize="839,774" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Validate if Folder for everyone of the regions exist" sap:VirtualizedContainerService.HintSize="1031,1514" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists - Regions folder" Exists="[FolderExists]" sap:VirtualizedContainerService.HintSize="797,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[CurrentDirectory + Row.Item(&quot;SalesDistrict&quot;).ToString]" PathType="Folder" />
-              <If Condition="[FolderExists]" DisplayName="Validate if Folder Exists" sap:VirtualizedContainerService.HintSize="797,553" sap2010:WorkflowViewState.IdRef="If_1">
+              <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists - Regions folder" Exists="[FolderExists]" sap:VirtualizedContainerService.HintSize="989,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[CurrentDirectory + Row.Item(&quot;SalesDistrict&quot;).ToString]" PathType="Folder" />
+              <If Condition="[FolderExists]" DisplayName="Validate if Folder Exists" sap:VirtualizedContainerService.HintSize="989,1293" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -202,21 +208,21 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,395" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence sap:VirtualizedContainerService.HintSize="568,1135" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Folder Exists&quot;]" />
-                    <Sequence DisplayName="Validate if Results successful file exist for region" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Folder &quot; +  Row.Item(&quot;SalesDistrict&quot;).ToString + &quot; exists on &quot; + CurrentDirectory.ToString]" />
+                    <Sequence DisplayName="Validate if Results successful file exist for region" sap:VirtualizedContainerService.HintSize="526,806" sap2010:WorkflowViewState.IdRef="Sequence_8">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists - Regions folder" Exists="[FileExists]" sap:VirtualizedContainerService.HintSize="484,89" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[CurrentDirectory + Row.Item(&quot;SalesDistrict&quot;).ToString + &quot;\Results_&quot; + Now.ToString(&quot;yyyy-MM-dd&quot;) + &quot;.xlsx&quot;]" PathType="File" />
+                      <ui:FileExistsX DisplayName="Final Report region Failed exists" Exists="[FileExists]" sap:VirtualizedContainerService.HintSize="484,132" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path="[CurrentDirectory + Row.Item(&quot;SalesDistrict&quot;).ToString + &quot;\Results_&quot; + Now.ToString(&quot;yyyy-MM-dd&quot;) + &quot;.xlsx&quot;]" />
                       <If Condition="[FileExists]" DisplayName="Validate if File Exists" sap:VirtualizedContainerService.HintSize="484,542" sap2010:WorkflowViewState.IdRef="If_2">
                         <If.Then>
                           <Sequence sap:VirtualizedContainerService.HintSize="376,355" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -240,14 +246,14 @@
                         </If.Else>
                       </If>
                     </Sequence>
-                    <Sequence DisplayName="Validate if Results Failed file exist for region" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <Sequence DisplayName="Validate if Results Failed file exist for region" sap:VirtualizedContainerService.HintSize="526,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists - Regions folder" Exists="[FileExists]" sap:VirtualizedContainerService.HintSize="484,89" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[CurrentDirectory + Row.Item(&quot;SalesDistrict&quot;).ToString + &quot;\FResults_&quot; + Now.ToString(&quot;yyyy-MM-dd&quot;) + &quot;.xlsx&quot;]" PathType="File" />
+                      <ui:FileExistsX DisplayName="Filan Report region Failed exists" Exists="[FileExists]" sap:VirtualizedContainerService.HintSize="484,132" sap2010:WorkflowViewState.IdRef="FileExistsX_3" Path="[CurrentDirectory + Row.Item(&quot;SalesDistrict&quot;).ToString + &quot;\FResults_&quot; + Now.ToString(&quot;yyyy-MM-dd&quot;) + &quot;.xlsx&quot;]" />
                       <If Condition="[FileExists]" DisplayName="Validate if File Exists" sap:VirtualizedContainerService.HintSize="484,542" sap2010:WorkflowViewState.IdRef="If_3">
                         <If.Then>
                           <Sequence sap:VirtualizedContainerService.HintSize="376,355" sap2010:WorkflowViewState.IdRef="Sequence_9">
@@ -289,6 +295,6 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="915,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;End Create and Clean Folder&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1107,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;End Create and Clean Folder&quot;]" />
   </Sequence>
 </Activity>
