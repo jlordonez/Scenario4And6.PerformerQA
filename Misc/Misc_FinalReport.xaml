@@ -5,19 +5,14 @@
     <x:Property Name="in_RegionsDt" Type="InArgument(sd:DataTable)" />
     <x:Property Name="NotificationsDt" Type="InArgument(sd:DataTable)" />
     <x:Property Name="in_FinalReportFolder" Type="InArgument(x:String)" />
-    <x:Property Name="in_FinalReportFileName" Type="InArgument(x:String)" />
-    <x:Property Name="in_FinalReportSheetName" Type="InArgument(x:String)" />
   </x:Members>
   <this:Misc_FilterFinalReport.in_FinalReportFolder>
     <InArgument x:TypeArguments="x:String" />
   </this:Misc_FilterFinalReport.in_FinalReportFolder>
-  <this:Misc_FilterFinalReport.in_FinalReportFileName>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Misc_FilterFinalReport.in_FinalReportFileName>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1006,1260</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1006,1460</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Misc_FilterFinalReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -91,6 +86,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -98,11 +94,13 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Misc_FinalReport" sap:VirtualizedContainerService.HintSize="839,1195" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Misc_FinalReport" sap:VirtualizedContainerService.HintSize="839,1395" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_folderExists" />
       <Variable x:TypeArguments="s:String[]" Name="Attachments" />
       <Variable x:TypeArguments="x:String" Name="totalRowItems" />
+      <Variable x:TypeArguments="x:String" Name="finalReportFileName" />
+      <Variable x:TypeArguments="x:String" Name="finalReportSheetName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -112,6 +110,22 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Trace" Message="[&quot;Start Final Report&quot;]" />
     <Delay DisplayName="Delay 1s" Duration="[TimeSpan.FromMilliseconds(1000)]" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+    <Assign DisplayName="Final Report File Name" sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_52">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[finalReportFileName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["FinalReport_" + Now.ToString("yyyy-MM-dd") + ".xlsx"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Final Report Sheet Name" sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_53">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[finalReportSheetName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">J0's Final Report</InArgument>
+      </Assign.Value>
+    </Assign>
     <If Condition="[IsNothing(in_CompleteFinalReportDt)]" DisplayName="Validate if in_CompleteFinalReportDt is Nothing" sap:VirtualizedContainerService.HintSize="797,779" sap2010:WorkflowViewState.IdRef="If_37">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -136,7 +150,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:WriteRange AddHeaders="True" DataTable="[in_CompleteFinalReportDt]" DisplayName="Write Range - ResultFileRegion" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_7" SheetName="[in_FinalReportSheetName]" StartingCell="A1" WorkbookPath="[in_FinalReportFolder + &quot;\&quot; + in_FinalReportFileName]" />
+          <ui:WriteRange AddHeaders="True" DataTable="[in_CompleteFinalReportDt]" DisplayName="Write Range - ResultFileRegion" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_7" SheetName="[finalReportSheetName]" StartingCell="A1" WorkbookPath="[in_FinalReportFolder + &quot;\&quot; + finalReportFileName]" />
           <Assign DisplayName="Assign - Total Row Items" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_51">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[totalRowItems]</OutArgument>
@@ -150,7 +164,7 @@
               <OutArgument x:TypeArguments="s:String[]">[Attachments]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="s:String[]">[{in_FinalReportFolder + "\" + in_FinalReportFileName}]</InArgument>
+              <InArgument x:TypeArguments="s:String[]">[{in_FinalReportFolder + "\" + finalReportFileName}]</InArgument>
             </Assign.Value>
           </Assign>
           <Delay DisplayName="Delay 5S" Duration="[TimeSpan.FromMilliseconds(5000)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />

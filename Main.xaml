@@ -461,7 +461,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.Condition>[SystemException IsNot Nothing]</Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="610,3507" sap2010:WorkflowViewState.IdRef="State_2">
+                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="254,103" sap2010:WorkflowViewState.IdRef="State_2">
                       <State.Entry>
                         <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="564,3089" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <sap:WorkflowViewStateService.ViewState>
@@ -604,18 +604,10 @@
                                     </ui:InvokeWorkflowFile>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Description: This workflow allow us to Create Folders for everyone of the Regions and save the transaction Files from transaction items (Busness Exception and Failed)." DisplayName="Invoke Misc_CreateAndCleanFolders workflow" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="Misc\Misc_CreateAndCleanFolders.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_RegionsDt">
-                                          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="NotificationsRegionsDt" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportFolder">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;FinalReportFolder&quot;).ToString" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportFileName">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;FinalReport_&quot; + Now.ToString(&quot;yyyy-MM-dd&quot;) + &quot;.xlsx&quot;" />
-                                        </InArgument>
+                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_RegionsDt">[NotificationsRegionsDt]</InArgument>
+                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportFolder">[Config("FinalReportFolder").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportFileName">["FinalReport_" + Now.ToString("yyyy-MM-dd") + ".xlsx"]</InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -714,7 +706,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,119" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="484,879" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                               <State.Entry>
                                 <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="438,735" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -745,13 +737,21 @@
                                       </ui:InvokeWorkflowFile>
                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Misc_FinalReport workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="Misc\Misc_FinalReport.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_CompleteFinalReportDt">[io_dtResult]</InArgument>
-                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_RegionsDt">[NotificationsRegionsDt]</InArgument>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="NotificationsDt">[dt_Notifications]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportFolder">[Config("FinalReportFolder").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportFileName">["FinalReport_" + Now.ToString("yyyy-MM-dd") + ".xlsx"]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportSheetName">J0's Final Report</InArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_CompleteFinalReportDt">
+                                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dtResult" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_RegionsDt">
+                                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="NotificationsRegionsDt" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="NotificationsDt">
+                                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Notifications" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportFolder">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;FinalReportFolder&quot;).ToString" />
+                                          </InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                     </Sequence>

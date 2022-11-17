@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1488,4748</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,4944</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Misc_FilterFinalReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -88,7 +88,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Misc_FilterFinalReport" sap:VirtualizedContainerService.HintSize="1498,4683" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Misc_FilterFinalReport" sap:VirtualizedContainerService.HintSize="1498,4879" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="Successfull_NoAtsDt" />
       <Variable x:TypeArguments="sd:DataTable" Name="Successfull_CiaDt" />
@@ -316,13 +316,13 @@ Select d).CopyToDataTable]</InArgument>
         </If.Else>
       </If>
     </Sequence>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_RegionsDt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1456,3309" sap2010:WorkflowViewState.IdRef="ForEachRow_11">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_RegionsDt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1456,3505" sap2010:WorkflowViewState.IdRef="ForEachRow_11">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Region" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1422,3194" sap2010:WorkflowViewState.IdRef="Sequence_75">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1422,3390" sap2010:WorkflowViewState.IdRef="Sequence_75">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -600,14 +600,14 @@ Select d).CopyToDataTable]</InArgument>
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Failed NO ATS" sap:VirtualizedContainerService.HintSize="1380,1327" sap2010:WorkflowViewState.IdRef="Sequence_48">
+            <Sequence DisplayName="Failed NO ATS" sap:VirtualizedContainerService.HintSize="1380,1523" sap2010:WorkflowViewState.IdRef="Sequence_48">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[IsNothing(Failed_NoAtsDt)]" DisplayName="Validate if Failed_NoAtsDt contains Data Rows" sap:VirtualizedContainerService.HintSize="1338,1235" sap2010:WorkflowViewState.IdRef="If_35">
+              <If Condition="[IsNothing(Failed_NoAtsDt)]" DisplayName="Validate if Failed_NoAtsDt contains Data Rows" sap:VirtualizedContainerService.HintSize="1338,1431" sap2010:WorkflowViewState.IdRef="If_35">
                 <If.Then>
                   <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_90">
                     <sap:WorkflowViewStateService.ViewState>
@@ -619,13 +619,13 @@ Select d).CopyToDataTable]</InArgument>
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="917,1077" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                  <Sequence sap:VirtualizedContainerService.HintSize="917,1273" sap2010:WorkflowViewState.IdRef="Sequence_91">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[Failed_NoAtsDt.AsEnumerable.Any(Function(Row)  Row(&quot;Sales District DESC&quot;).ToString.Trim.Contains(Region.Item(&quot;SalesDistrict&quot;).ToString) )]" DisplayName="Validate if Failed_NoAtsDt contains Regions" sap:VirtualizedContainerService.HintSize="875,985" sap2010:WorkflowViewState.IdRef="If_26">
+                    <If Condition="[Failed_NoAtsDt.AsEnumerable.Any(Function(Row)  Row(&quot;Sales District DESC&quot;).ToString.Trim.Contains(Region.Item(&quot;SalesDistrict&quot;).ToString) )]" DisplayName="Validate if Failed_NoAtsDt contains Regions" sap:VirtualizedContainerService.HintSize="875,1181" sap2010:WorkflowViewState.IdRef="If_26">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -633,7 +633,7 @@ Select d).CopyToDataTable]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Final Report Failed NO ATS" sap:VirtualizedContainerService.HintSize="839,798" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                        <Sequence DisplayName="Final Report Failed NO ATS" sap:VirtualizedContainerService.HintSize="839,994" sap2010:WorkflowViewState.IdRef="Sequence_67">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="sd:DataTable" Name="FinalReportRegionDt" />
                             <Variable x:TypeArguments="x:String" Name="ResultFileRegion" />
@@ -654,10 +654,10 @@ Where d("Sales District DESC").ToString.Trim.Contains(Region.Item("SalesDistrict
 Select d).CopyToDataTable]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <If Condition="[String.IsNullOrEmpty(ResultFileRegion)]" DisplayName="If ResultFileRegion is empty" sap:VirtualizedContainerService.HintSize="797,51" sap2010:WorkflowViewState.IdRef="If_24">
+                          <If Condition="[String.IsNullOrEmpty(ResultFileRegion)]" DisplayName="If ResultFileRegion is empty" sap:VirtualizedContainerService.HintSize="797,247" sap2010:WorkflowViewState.IdRef="If_24">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -878,9 +878,15 @@ Select d).CopyToDataTable]</InArgument>
     <Delay DisplayName="Delay 5S" Duration="[TimeSpan.FromMilliseconds(5000)]" sap:VirtualizedContainerService.HintSize="1456,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendTransactionFileProcessedForRegion workflow" sap:VirtualizedContainerService.HintSize="1456,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Email\SendTransactionFileProcessedForRegion.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="NotificationsDt">[NotificationsDt]</InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="RegionsDt">[in_RegionsDt]</InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="NotificationsDt">
+          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="NotificationsDt" />
+        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="RegionsDt">
+          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_RegionsDt" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1456,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;End Filter Final Report&quot;]" />
