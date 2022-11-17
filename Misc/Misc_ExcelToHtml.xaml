@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1068,1152</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1006,5388</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Misc_ExcelToHtml_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -46,7 +46,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="68">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -80,16 +80,13 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Misc_ExcelToHtml" sap:VirtualizedContainerService.HintSize="476,1087" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Misc_ExcelToHtml" sap:VirtualizedContainerService.HintSize="981,5323" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="DataTable">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="New System.Data.DataTable" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="DataTable" />
       <Variable x:TypeArguments="x:String" Default="bodyFile.txt" Name="bodyFileName" />
       <Variable x:TypeArguments="x:Boolean" Name="bool_fileExists" />
       <Variable x:TypeArguments="x:String" Default="Data\Temp" Name="bodyFilePath" />
@@ -102,11 +99,11 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Excel To HTML&quot;]" />
-    <Sequence DisplayName="Get Workbook Sheets" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="939,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Excel To HTML&quot;]" />
+    <Sequence DisplayName="Get Workbook Sheets" sap:VirtualizedContainerService.HintSize="939,315" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -128,26 +125,26 @@
         </ui:ExcelApplicationScope.Body>
       </ui:ExcelApplicationScope>
     </Sequence>
-    <Sequence DisplayName="Extract Data Table from Excel File REgion" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Sequence_18">
+    <Sequence DisplayName="Extract Data Table from Excel File REgion" sap:VirtualizedContainerService.HintSize="939,1610" sap2010:WorkflowViewState.IdRef="Sequence_18">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Sheet in Excel File" sap:VirtualizedContainerService.HintSize="875,553" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[sheetCollection]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Sheet in Excel File" sap:VirtualizedContainerService.HintSize="789,582" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[sheetCollection]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="sheet" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="839,429" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,458" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[sheet.Contains(&quot;NO ATS&quot;)]" DisplayName="Validate if NO ATS sheet exists" sap:VirtualizedContainerService.HintSize="797,337" sap2010:WorkflowViewState.IdRef="If_3">
+              <If Condition="[sheet.Trim.ToUpper.Equals(&quot;NO ATS&quot;)]" DisplayName="Validate if NO ATS sheet exists" sap:VirtualizedContainerService.HintSize="484,366" sap2010:WorkflowViewState.IdRef="If_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -177,25 +174,12 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <Sequence sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_14">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ReadRange AddHeaders="True" DataTable="[CIA_dt]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="[sheet]" WorkbookPath="[in_strWorkbookPath]">
-                      <ui:ReadRange.Range>
-                        <InArgument x:TypeArguments="x:String">
-                          <Literal x:TypeArguments="x:String" Value="" />
-                        </InArgument>
-                      </ui:ReadRange.Range>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:ReadRange>
                   </Sequence>
                 </If.Else>
               </If>
@@ -203,17 +187,17 @@
           </ActivityAction>
         </ui:ForEach.Body>
       </ui:ForEach>
-      <Sequence DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="875,22" sap2010:WorkflowViewState.IdRef="Sequence_24">
+      <Sequence DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="789,896" sap2010:WorkflowViewState.IdRef="Sequence_24">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[IsNothing(NoAts_dt)]" DisplayName="Validate if NoAts_dt is Nothing" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="If_6">
+        <If Condition="[IsNothing(NoAts_dt)]" DisplayName="Validate if NoAts_dt is Nothing" sap:VirtualizedContainerService.HintSize="747,382" sap2010:WorkflowViewState.IdRef="If_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -238,10 +222,10 @@
             </Sequence>
           </If.Else>
         </If>
-        <If Condition="[IsNothing(CIA_dt)]" DisplayName="Validate if CIA_dt is Nothing" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="If_7">
+        <If Condition="[IsNothing(CIA_dt)]" DisplayName="Validate if CIA_dt is Nothing" sap:VirtualizedContainerService.HintSize="747,382" sap2010:WorkflowViewState.IdRef="If_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -268,10 +252,10 @@
         </If>
       </Sequence>
     </Sequence>
-    <Sequence DisplayName="Validate if Body File Exists" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Sequence_19">
+    <Sequence DisplayName="Validate if Body File Exists" sap:VirtualizedContainerService.HintSize="939,646" sap2010:WorkflowViewState.IdRef="Sequence_19">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -306,7 +290,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <ui:AppendLine File="{x:Null}" DisplayName="Append HTML Tag" FileName="[bodyFilePath + &quot;\&quot; + bodyFileName]" sap:VirtualizedContainerService.HintSize="434,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="&lt;html&gt;&lt;body&gt;&lt;table border = 1&gt;" UseDefaultEncoding="False">
+    <ui:AppendLine File="{x:Null}" DisplayName="Append HTML Tag" FileName="[bodyFilePath + &quot;\&quot; + bodyFileName]" sap:VirtualizedContainerService.HintSize="939,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="&lt;html&gt;&lt;body&gt;&lt;table border = 1&gt;" UseDefaultEncoding="False">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -314,10 +298,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:AppendLine>
-    <Sequence DisplayName="Append Headers" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Append Headers" sap:VirtualizedContainerService.HintSize="939,784" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -341,10 +325,10 @@
       </ui:ForEach>
       <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[bodyFilePath + &quot;\&quot; + bodyFileName]" sap:VirtualizedContainerService.HintSize="434,132" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="&lt;/tr&gt;" UseDefaultEncoding="False" />
     </Sequence>
-    <Sequence DisplayName="Append Data" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence DisplayName="Append Data to bodyFile" sap:VirtualizedContainerService.HintSize="939,991" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -384,7 +368,7 @@
       </ui:ForEachRow>
       <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[bodyFilePath + &quot;\&quot; + bodyFileName]" sap:VirtualizedContainerService.HintSize="510,132" sap2010:WorkflowViewState.IdRef="AppendLine_7" Text="&lt;/tr&gt;" UseDefaultEncoding="False" />
     </Sequence>
-    <ui:AppendLine File="{x:Null}" DisplayName="Append HTML Tag" FileName="[bodyFilePath + &quot;\&quot; + bodyFileName]" sap:VirtualizedContainerService.HintSize="434,132" sap2010:WorkflowViewState.IdRef="AppendLine_8" Text="&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;" UseDefaultEncoding="False">
+    <ui:AppendLine File="{x:Null}" DisplayName="Append HTML Tag" FileName="[bodyFilePath + &quot;\&quot; + bodyFileName]" sap:VirtualizedContainerService.HintSize="939,132" sap2010:WorkflowViewState.IdRef="AppendLine_8" Text="&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;" UseDefaultEncoding="False">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -392,7 +376,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:AppendLine>
-    <ui:ReadTextFile File="{x:Null}" Content="[out_strBodyFile]" DisplayName="Read Text File" FileName="[bodyFilePath + &quot;\&quot; + bodyFileName]" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+    <ui:ReadTextFile File="{x:Null}" Content="[out_strBodyFile]" DisplayName="Read Text File" FileName="[bodyFilePath + &quot;\&quot; + bodyFileName]" sap:VirtualizedContainerService.HintSize="939,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -400,6 +384,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReadTextFile>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;End Excel To HTML&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="939,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;End Excel To HTML&quot;]" />
   </Sequence>
 </Activity>
