@@ -23,59 +23,35 @@
 <th>Total Rejected Quantity</th>
 <th>Sales Order Item COD</th>
 <th>Status</th>
+<th>Action To Take</th>
 <th>Message</th>
 </tr>
 <tr>
-<td>710536856306</td>
-<td>SS KC SLIM FIT MODEL 1</td>
-<td>18509</td>
-<td>THE HUT.COM LTD</td>
+<td>710644988081</td>
+<td>SLIM FIT HDN PANT</td>
+<td>16641</td>
+<td>LODEN FREY VERKAUFSHAUS GmbH & CO K</td>
 <td>10</td>
 <td>Wholesale</td>
-<td>4047</td>
-<td>RL UK Ltd</td>
-<td>UK & Ireland</td>
-<td>25349956</td>
+<td>4027</td>
+<td>RL Germany GmbH</td>
+<td>Region Germany</td>
+<td>25124934</td>
 <td>ZORL</td>
 <td>P</td>
 <td>PREBOOK</td>
-<td>321</td>
-<td>CR/PS 2021 EU Mkt 3</td>
-<td>11/10/2021 00:00:00</td>
-<td>0005</td>
-<td>XXL</td>
+<td>122</td>
+<td>PF/TR 2022 EU Mkt 1</td>
+<td>10/03/2021 00:00:00</td>
+<td>0015</td>
+<td>34  32</td>
 <td>J0</td>
-<td> </td>
-<td>1</td>
-<td>100</td>
+<td>A6</td>
+<td>2</td>
+<td>13700</td>
 <td>Failed</td>
-<td> SD document 25349956 is not in the database or has been archived
-   </td>
-<tr>
-<td>710536856306</td>
-<td>SS KC SLIM FIT MODEL 1</td>
-<td>18509</td>
-<td>THE HUT.COM LTD</td>
-<td>10</td>
-<td>Wholesale</td>
-<td>4047</td>
-<td>RL UK Ltd</td>
-<td>UK & Ireland</td>
-<td>25353370</td>
-<td>ZORL</td>
-<td>P</td>
-<td>PREBOOK</td>
-<td>321</td>
-<td>CR/PS 2021 EU Mkt 3</td>
-<td>11/10/2021 00:00:00</td>
-<td>0005</td>
-<td>XXL</td>
-<td>J0</td>
-<td> </td>
-<td>1</td>
-<td>100</td>
-<td>Failed</td>
-<td> SD document 25353370 is not in the database or has been archived
+<td>Rejection</td>
+<td> There is not J0 rejection assigned to the transaction item: 25124934
    </td>
 </tr>
 </table></body></html>
