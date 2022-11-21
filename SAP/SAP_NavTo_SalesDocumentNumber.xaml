@@ -307,14 +307,14 @@
                                     <av:Size x:Key="ShapeSize">200,66</av:Size>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Validate Status of Transaction" sap:VirtualizedContainerService.HintSize="1124,926" sap2010:WorkflowViewState.IdRef="Sequence_146">
+                                <Sequence DisplayName="Validate Status of Transaction" sap:VirtualizedContainerService.HintSize="1082,828" sap2010:WorkflowViewState.IdRef="Sequence_146">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Pick sap:VirtualizedContainerService.HintSize="1082,834" sap2010:WorkflowViewState.IdRef="Pick_1">
-                                    <PickBranch DisplayName="PickBranch - Validate Consider Subsequent Document" sap:VirtualizedContainerService.HintSize="200,788" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+                                  <Pick sap:VirtualizedContainerService.HintSize="1040,736" sap2010:WorkflowViewState.IdRef="Pick_1">
+                                    <PickBranch DisplayName="PickBranch - Validate Consider Subsequent Document" sap:VirtualizedContainerService.HintSize="200,690" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -352,10 +352,10 @@
                                         </ui:Click.Target>
                                       </ui:Click>
                                     </PickBranch>
-                                    <PickBranch DisplayName="PickBranch - Validate Status of SD Document on SAP" sap:VirtualizedContainerService.HintSize="468,788" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+                                    <PickBranch DisplayName="PickBranch - Validate Status of SD Document on SAP" sap:VirtualizedContainerService.HintSize="200,690" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
@@ -396,7 +396,7 @@
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Send Hotkey 'F3'" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="SendHotkey_25" Key="f3" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
+                                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="False" DisplayName="Send Hotkey 'F3'" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="SendHotkey_25" Key="f3" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
                                             <ui:SendHotkey.Target>
                                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c85bc188-9a13-4c2b-8529-dd0e293d8b8a" Selector="&lt;wnd app='nwbc.exe' cls='HwndWrapper*' idx='*' /&gt;&lt;wnd cls='SAP_FRONTEND_EMBEDDED' title='Change *' /&gt;&lt;sap text='Change *' /&gt;">
                                                 <ui:Target.TimeoutMS>
@@ -412,10 +412,10 @@
                                         <Throw DisplayName="Throw  BRE - SD Document Failed" Exception="[new BusinessRuleException(getDocNumberMsg.ToString)]" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="Throw_26" />
                                       </Sequence>
                                     </PickBranch>
-                                    <PickBranch DisplayName="PickBranch - Validate Exit Button (Document Processing Blocked)" sap:VirtualizedContainerService.HintSize="200,788" sap2010:WorkflowViewState.IdRef="PickBranch_3">
+                                    <PickBranch DisplayName="PickBranch - Validate Exit Button (Document Processing Blocked)" sap:VirtualizedContainerService.HintSize="426,690" sap2010:WorkflowViewState.IdRef="PickBranch_3">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
