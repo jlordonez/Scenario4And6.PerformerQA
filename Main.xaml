@@ -610,9 +610,6 @@
                                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
                                           <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
                                         </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportFolder">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;FinalReportFolder&quot;).ToString" />
-                                        </InArgument>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportFileName">
                                           <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;FinalReport_&quot; + Now.ToString(&quot;yyyy-MM-dd&quot;) + &quot;.xlsx&quot;" />
                                         </InArgument>
@@ -737,40 +734,20 @@
                                       </ui:InvokeWorkflowFile>
                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Misc_FilterFinalReport workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Misc\Misc_FilterFinalReport.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_CompleteFinalReportDt">
-                                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dtResult" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_RegionsDt">
-                                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="NotificationsRegionsDt" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="NotificationsDt">
-                                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Notifications" />
-                                          </InArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_CompleteFinalReportDt">[io_dtResult]</InArgument>
+                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_RegionsDt">[NotificationsRegionsDt]</InArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="NotificationsDt">[dt_Notifications]</InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Misc_FinalReport workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="Misc\Misc_FinalReport.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_CompleteFinalReportDt">
-                                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dtResult" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_RegionsDt">
-                                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="NotificationsRegionsDt" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="NotificationsDt">
-                                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Notifications" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportFolder">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;FinalReportFolder&quot;).ToString" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportFileName">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;FinalReport_&quot; + Now.ToString(&quot;yyyy-MM-dd&quot;) + &quot;.xlsx&quot;" />
-                                          </InArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_CompleteFinalReportDt">[io_dtResult]</InArgument>
+                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_RegionsDt">[NotificationsRegionsDt]</InArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="NotificationsDt">[dt_Notifications]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportFolder">[Config("FinalReportFolder").ToString]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_FinalReportFileName">["FinalReport_" + Now.ToString("yyyy-MM-dd") + ".xlsx"]</InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                     </Sequence>
