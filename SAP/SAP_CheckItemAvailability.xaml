@@ -541,7 +541,7 @@ d("Grid Value").ToString.Trim.ToUpper.Equals(in_TransactionItem.SpecificContent(
                       <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <Throw DisplayName="Throw BRE" Exception="[New BusinessRuleException(&quot;There is not a Rejection Reason valid for the transaction Item  (&quot; + in_TransactionItem.SpecificContent(&quot;SalesOrderItemCOD&quot;).ToString.Trim + &quot;)&quot; + &#xD;&#xA;                                              &quot;to be processed&quot; )]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_8" />
+                  <Throw DisplayName="Throw BRE" Exception="[New BusinessRuleException(&quot;There is not a Rejection Reason valid on SAP to be processed&quot; )]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_8" />
                 </Sequence>
               </If.Else>
             </If>
